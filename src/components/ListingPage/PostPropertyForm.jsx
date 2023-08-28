@@ -15,7 +15,10 @@ const PostPropertyForm = () => {
     price: "",
     phoneNumber: "",
     emailid: "",
+    photo: "",
   });
+
+  const [image, setImage] = useState();
 
   const {
     propertyOption,
@@ -27,16 +30,27 @@ const PostPropertyForm = () => {
     price,
     phoneNumber,
     emailid,
+    photo,
   } = propertyData;
+
+  const formData = new FormData();
 
   const onInputChange = (e) => {
     setPropertyData({ ...propertyData, [e.target.name]: e.target.value });
     console.log(propertyData);
+    console.log(formData);
+    console.log(image);
+  };
+
+  const handleImage = (e) => {
+    setImage(e.target.files[0]);
+    formData.append("photo", image);
+    setPropertyData({ ...propertyData, photo: e.target.files[0] });
   };
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    await axios.post("http://localhost:5000/propertyData", propertyData);
+    await axios.post("http://localhost:5000/propertyData", formData);
   };
 
   return (
@@ -130,7 +144,7 @@ const PostPropertyForm = () => {
                   className="image-upload"
                 >
                   Upload Photo
-                  <input type="file" hidden />
+                  <input type="file" hidden onChange={handleImage} />
                 </Button>
               </div>
             </div>
