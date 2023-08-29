@@ -1,6 +1,11 @@
 import React from "react";
 import { Box } from "@mui/material";
-import { GetStarted, Navbar, SearchBox } from "../components/HomePage";
+import {
+  GetStarted,
+  MiddleSection,
+  Navbar,
+  SearchBox,
+} from "../components/HomePage";
 
 const Home = () => {
   return (
@@ -17,11 +22,12 @@ const Home = () => {
         <img
           src="assets/nav-home.jpg"
           alt="nav-home"
-          style={{ maxHeight: "45vh" }}
+          style={{ maxHeight: "45vh", objectFit: "cover", width: "100%" }}
         />
         <SearchBox />
       </Box>
       <GetStarted />
+      <MiddleSection />
     </>
   );
 };

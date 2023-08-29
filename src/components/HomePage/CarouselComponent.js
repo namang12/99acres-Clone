@@ -61,7 +61,10 @@ const CarouselComponent = () => {
           <img
             src={card.src}
             alt="carouselPhoto"
-            style={{ maxWidth: "180px" }}
+            style={{
+              maxWidth: "180px",
+              cursor: "pointer",
+            }}
           />
           <Typography
             sx={{
