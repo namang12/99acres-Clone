@@ -27,6 +27,7 @@ const SearchBox = () => {
 
   return (
     <Paper
+      elevation={5}
       sx={{
         background: "#fff",
         borderRadius: "15px",
