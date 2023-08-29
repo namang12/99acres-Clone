@@ -1,3 +1,4 @@
+import BottomSection from "./BottomSection";
 import CarouselComponent from "./CarouselComponent";
 import ExploreCards from "./ExploreCards";
 import GetStarted from "./GetStarted";
@@ -12,4 +13,5 @@ export {
   SearchBox,
   MiddleSection,
   ExploreCards,
+  BottomSection,
 };

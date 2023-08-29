@@ -25,6 +25,10 @@ const carouselCards = [
     text: "Plots/Land",
   },
   {
+    src: "/assets/HomeCarouselImages/d_hp_pg.webp",
+    text: "PG and co-living",
+  },
+  {
     src: "/assets/HomeCarouselImages/d_hp_com_buy.webp",
     text: "Buying commercial spaces",
   },

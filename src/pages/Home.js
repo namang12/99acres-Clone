@@ -1,6 +1,7 @@
 import React from "react";
 import { Box } from "@mui/material";
 import {
+  BottomSection,
   GetStarted,
   MiddleSection,
   Navbar,
@@ -28,6 +29,7 @@ const Home = () => {
       </Box>
       <GetStarted />
       <MiddleSection />
+      <BottomSection />
     </>
   );
 };

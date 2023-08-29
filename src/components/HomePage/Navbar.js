@@ -17,7 +17,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 100) {
+      if (window.scrollY > 300) {
         setScrolled(true);
       } else {
         setScrolled(false);
@@ -42,8 +42,12 @@ export default function Navbar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
-        position="absolute"
-        sx={{ background: scrolled ? "#005CA8" : "none", boxShadow: "none" }}
+        position="fixed"
+        sx={{
+          background: scrolled ? "#005CA8" : "none",
+          boxShadow: "none",
+          transition: "0.5s ease",
+        }}
       >
         <Toolbar>
           <Typography
