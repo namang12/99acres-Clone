@@ -1,4 +1,4 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Button, Container, Grid, Typography } from "@mui/material";
 import React from "react";
 import { DarkTypography, LightTypography } from "../Common";
 import Carousel from "react-multi-carousel";
@@ -47,6 +47,7 @@ const Card = ({ src, text1, text2 }) => {
           height: "98px",
           objectFit: "cover",
           borderRadius: "8px",
+          cursor: "pointer",
         }}
       />
       <Box>
@@ -77,6 +78,106 @@ const Card = ({ src, text1, text2 }) => {
           {text2}
         </Typography>
       </Box>
+    </Box>
+  );
+};
+
+const CommercialCard = ({
+  bgColor,
+  lightText,
+  titleText1,
+  titleText2,
+  subline1,
+  subline2,
+  btnText,
+}) => {
+  return (
+    <Box
+      sx={{
+        minWidth: "512px",
+        minHeight: "450px",
+        borderRadius: "8px",
+        background: bgColor,
+      }}
+    >
+      <Box sx={{ padding: "80px 64px" }}>
+        <LightTypography text={lightText} fontSize="14px" />
+        <Typography
+          sx={{
+            mt: 1,
+            color: "#041533",
+            fontSize: "32px",
+            fontWeight: 700,
+            lineHeight: "48px",
+            fontFamily: "Open Sans",
+          }}
+        >
+          {titleText1} <br /> {titleText2}
+        </Typography>
+        <Typography
+          sx={{
+            mt: 1,
+            color: "#253858",
+            fontSize: "16px",
+            fontWeight: 400,
+            lineHeight: "24px",
+            fontFamily: "Open Sans",
+          }}
+        >
+          {subline1}
+          <br /> {subline2}
+        </Typography>
+        <Button
+          disableRipple
+          sx={{
+            mt: 3,
+            background: "#0078DB",
+            padding: "16px 24px",
+            fontSize: "16px",
+            lineHeight: "20px",
+            fontWeight: 700,
+            color: "#fff",
+            fontFamily: "Open Sans",
+            textTransform: "capitalize",
+            ":hover": {
+              background: "#006AC2",
+            },
+          }}
+        >
+          {btnText}
+        </Button>
+      </Box>
+    </Box>
+  );
+};
+
+const WhyChoose = ({ text1, text2 }) => {
+  return (
+    <Box>
+      <Typography
+        sx={{
+          mt: 1,
+          color: "#041533",
+          fontSize: "20px",
+          fontWeight: 600,
+          lineHeight: "28px",
+          fontFamily: "Open Sans",
+        }}
+      >
+        {text1}
+      </Typography>
+      <Typography
+        sx={{
+          mt: 1,
+          color: "#8993A4",
+          fontSize: "16px",
+          fontWeight: 400,
+          lineHeight: "24px",
+          fontFamily: "Open Sans",
+        }}
+      >
+        {text2}
+      </Typography>
     </Box>
   );
 };
@@ -124,6 +225,79 @@ const BottomSection = () => {
           </Box>
         ))}
       </Carousel>
+      <Box
+        sx={{
+          mt: 3,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <LightTypography text={"COMMERCIAL SPACES"} />
+        <DarkTypography
+          text1={"Choose from a wide variety of"}
+          text2={"commercial properties"}
+        />
+      </Box>
+      <Box
+        sx={{
+          display: "flex",
+          mt: 3,
+          alignItems: "center",
+          justifyContent: "center",
+          gap: 3,
+        }}
+      >
+        <CommercialCard
+          bgColor="#e0e3e8"
+          lightText="BUY FOR COMMERCIAL USE"
+          titleText1="Buy a Commercial"
+          titleText2="property"
+          subline1="Explore from Office Spaces, Co-working spaces,"
+          subline2="Retail Shops, Land, Factories and more"
+          btnText="Explore Buying Commercial"
+        />
+        <CommercialCard
+          bgColor="#efe5db"
+          lightText="LEASE FOR COMMERCIAL USE"
+          titleText1="Lease a Commercial"
+          titleText2="property"
+          subline1="Explore from Office Spaces, Co-working spaces,"
+          subline2="Retail Shops, Land, Factories and more"
+          btnText="Explore Leasing Commercial"
+        />
+      </Box>
+      <Box
+        sx={{
+          mt: 5,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <LightTypography text={"BENEFITS OF 99ACRES"} />
+        <DarkTypography text1={"Why choose 99acres"} />
+      </Box>
+      <Grid container spacing={4} sx={{ display: "flex", mt: 4 }}>
+        <Grid item md={4}>
+          <WhyChoose
+            text1="Over 12 Lac properties"
+            text2="10,000+ properties are added every day"
+          />
+        </Grid>
+        <Grid item md={4}>
+          <WhyChoose
+            text1="Verification by 99acres team"
+            text2="Photos / Videos and other details are verified on location"
+          />
+        </Grid>
+        <Grid item md={4}>
+          <WhyChoose
+            text1="Large user base"
+            text2="High active user count and user engagement to find and close deals"
+          />
+        </Grid>
+      </Grid>
     </Container>
   );
 };

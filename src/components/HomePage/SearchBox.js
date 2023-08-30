@@ -75,7 +75,7 @@ const SearchBox = () => {
           alignItems: "center",
         }}
       >
-        <Box sx={{ p: "16px 16px 16px 16px" }}>
+        <Box sx={{ p: "16px 10px 16px 16px" }}>
           <Typography
             sx={{
               color: "#42526E",
