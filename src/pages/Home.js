@@ -1,5 +1,7 @@
-import React from "react";
+import React , {useState} from "react";
 import { Box } from "@mui/material";
+
+
 import {
   BottomSection,
   GetStarted,
@@ -9,6 +11,7 @@ import {
 } from "../components/HomePage";
 
 const Home = () => {
+  
   return (
     <>
       <Box

@@ -1,0 +1,71 @@
+/* Modal.css */
+
+/* Style for the modal content */
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto; /* Adjust the top margin to center the modal vertically */
+    padding: 0px;
+    border: 1px solid #888;
+    width: 120%;
+    height: 100%; /* Adjust the width to your desired size */
+     /* Add a maximum width if needed */
+    border-radius: 0px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .blurred-background {
+    filter: blur(5px); /* Adjust the blur intensity as needed */
+    transition: filter 0.3s ease-in-out; /* Add a smooth transition effect */
+  }
+  
+  /* Modal.css */
+
+/* Style for the close button */
+.close-button {
+  position: absolute;
+  top: 2px;
+  right: 10px;
+  font-size: 30px;
+  background: none;
+  border: none;
+  z-index: 9999;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+  /* Style for the close button (optional) */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* Additional styling can be added here */
+  
+
+  /* Modal.css */
+
+/* Style for the modal content */
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto; /* Adjust the top margin to center the modal vertically */
+    padding: 0px;
+    border: 1px solid #888;
+    width: 120%;
+    height: 100%; /* Adjust the width to your desired size */
+     /* Add a maximum width if needed */
+    border-radius: 0px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Modal.css */
+

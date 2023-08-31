@@ -13,6 +13,7 @@ import { useNavigate } from "react-router-dom";
 export default function Navbar() {
   const [anchorEl, setAnchorEl] = useState(null);
   const [scrolled, setScrolled] = useState(false);
+  
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -38,6 +39,7 @@ export default function Navbar() {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
 
   return (
     <Box sx={{ flexGrow: 1 }}>
