@@ -2,6 +2,8 @@ import { Box, Typography } from "@mui/material";
 import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { useDispatch } from "react-redux";
+import { openSearchModal } from "../../redux/SearchModal/SearchModalSlice";
 
 const carouselCards = [
   {
@@ -39,6 +41,8 @@ const carouselCards = [
 ];
 
 const CarouselComponent = () => {
+  const dispatch = useDispatch();
+
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
@@ -63,6 +67,7 @@ const CarouselComponent = () => {
       {carouselCards.map((card, index) => (
         <Box key={index}>
           <img
+            onClick={() => dispatch(openSearchModal())}
             src={card.src}
             alt="carouselPhoto"
             style={{
