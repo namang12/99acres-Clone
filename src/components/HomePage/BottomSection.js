@@ -3,6 +3,8 @@ import React from "react";
 import { DarkTypography, LightTypography } from "../Common";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { useDispatch } from "react-redux";
+import { openSearchModal } from "../../redux/SearchModal/SearchModalSlice";
 
 const citiesList = [
   {
@@ -37,8 +39,12 @@ const citiesList = [
 ];
 
 const Card = ({ src, text1, text2 }) => {
+  const dispatch = useDispatch();
   return (
-    <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
+    <Box
+      onClick={() => dispatch(openSearchModal())}
+      sx={{ display: "flex", alignItems: "center", mb: 2, cursor: "pointer" }}
+    >
       <img
         src={src}
         alt="citiesImage"
@@ -47,7 +53,6 @@ const Card = ({ src, text1, text2 }) => {
           height: "98px",
           objectFit: "cover",
           borderRadius: "8px",
-          cursor: "pointer",
         }}
       />
       <Box>
@@ -91,13 +96,17 @@ const CommercialCard = ({
   subline2,
   btnText,
 }) => {
+  const dispatch = useDispatch();
+
   return (
     <Box
+      onClick={() => dispatch(openSearchModal())}
       sx={{
         minWidth: "512px",
         minHeight: "450px",
         borderRadius: "8px",
         background: bgColor,
+        cursor: "pointer",
       }}
     >
       <Box sx={{ padding: "80px 64px" }}>
@@ -128,6 +137,7 @@ const CommercialCard = ({
           <br /> {subline2}
         </Typography>
         <Button
+          onClick={() => dispatch(openSearchModal())}
           disableRipple
           sx={{
             mt: 3,

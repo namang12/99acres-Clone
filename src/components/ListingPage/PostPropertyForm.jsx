@@ -15,10 +15,10 @@ const PostPropertyForm = () => {
     price: "",
     phoneNumber: "",
     emailid: "",
-    photo: "",
   });
 
   const [image, setImage] = useState();
+  const formData = new FormData();
 
   const {
     propertyOption,
@@ -30,16 +30,11 @@ const PostPropertyForm = () => {
     price,
     phoneNumber,
     emailid,
-    photo,
   } = propertyData;
-
-  const formData = new FormData();
 
   const onInputChange = (e) => {
     setPropertyData({ ...propertyData, [e.target.name]: e.target.value });
     console.log(propertyData);
-    console.log(formData);
-    console.log(image);
   };
 
   const handleImage = (e) => {
@@ -50,7 +45,7 @@ const PostPropertyForm = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    await axios.post("http://localhost:5000/propertyData", formData);
+    await axios.post("http://localhost:5000/propertyData", propertyData);
   };
 
   return (
