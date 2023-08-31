@@ -31,6 +31,7 @@ const Home = () => {
       <GetStarted />
       <MiddleSection />
       <BottomSection />
+      <Footer/>
     </>
   );
 };

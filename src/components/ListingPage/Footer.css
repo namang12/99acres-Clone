@@ -17,9 +17,9 @@
 .div-footer .div-footer-2 {
   align-items: flex-start;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   max-width: 1450px;
-  width: 85%;
+  width: 100%;
 }
 
 .div-footer .div-footer-3{
