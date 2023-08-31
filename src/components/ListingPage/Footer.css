@@ -17,7 +17,7 @@
 .div-footer .div-footer-2 {
   align-items: flex-start;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 100%;
 }
 
