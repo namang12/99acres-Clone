@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState, useEffect } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -11,8 +11,25 @@ import { Button, Chip } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
@@ -25,8 +42,12 @@ export default function Navbar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
-        position="absolute"
-        sx={{ background: "none", boxShadow: "none" }}
+        position="fixed"
+        sx={{
+          background: scrolled ? "#005CA8" : "none",
+          boxShadow: "none",
+          transition: "0.5s ease",
+        }}
       >
         <Toolbar>
           <Typography

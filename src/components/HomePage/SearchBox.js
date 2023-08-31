@@ -27,6 +27,7 @@ const SearchBox = () => {
 
   return (
     <Paper
+      elevation={5}
       sx={{
         background: "#fff",
         borderRadius: "15px",
@@ -74,7 +75,7 @@ const SearchBox = () => {
           alignItems: "center",
         }}
       >
-        <Box sx={{ p: "16px 16px 16px 16px" }}>
+        <Box sx={{ p: "16px 10px 16px 16px" }}>
           <Typography
             sx={{
               color: "#42526E",
