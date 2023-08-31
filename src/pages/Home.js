@@ -1,8 +1,17 @@
-import * as React from "react";
+import React from "react";
+import { useState } from "react";
+// import Modal from "react-responsive-modal";
+import Backdrop from "@mui/material/Backdrop";
+
+import { Modal } from "@mui/material";
+import LoginForm from "../components/LoginSignUp/LoginForm";
+import SignUpForm from "../components/LoginSignUp/SignUpForm";
+// import "../components/HomePage/Modal.css";
 import PropTypes from "prop-types";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 import Box from "@mui/material/Box";
 import Fab from "@mui/material/Fab";
+
 import Fade from "@mui/material/Fade";
 import {
   BottomSection,
@@ -15,6 +24,18 @@ import {
 import StraightSharpIcon from "@mui/icons-material/StraightSharp";
 
 import Footer from "../components/ListingPage/Footer"
+
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 800,
+  bgcolor: 'background.paper',
+ 
+  boxShadow: 24,
+
+};
 
 function ScrollTop(props) {
   const { children, window } = props;
@@ -36,6 +57,8 @@ function ScrollTop(props) {
       });
     }
   };
+
+ 
 
   return (
     <Fade in={trigger}>
@@ -60,6 +83,27 @@ ScrollTop.propTypes = {
 };
 
 const Home = (props) => {
+
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [showLogin, setShowLogin] = useState(true);
+  const openModal = () => {
+    console.log("open");
+    setModalIsOpen(true);
+  };
+
+  
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
+
+  const switchToLogin = () => {
+    setShowLogin(true);
+  };
+
+  const switchToSignUp = () => {
+    setShowLogin(false);
+  };
   return (
     <>
       <Box
@@ -71,7 +115,7 @@ const Home = (props) => {
           minHeight: "55vh",
         }}
       >
-        <Navbar />
+          <Navbar openModal = {openModal}/>
         <img
           src="assets/nav-home.jpg"
           alt="nav-home"
@@ -80,7 +124,34 @@ const Home = (props) => {
         <SearchBox />
       </Box>
       <SearchModal />
+      <div>
+        <Modal
+        aria-labelledby="transition-modal-title"
+        aria-describedby="transition-modal-description"
+        open={modalIsOpen}
+        onClose={closeModal}
+        closeAfterTransition
+        slots={{ backdrop: Backdrop }}
+        slotProps={{
+          backdrop: {
+            timeout: 500,
+          },
+        }}
+        
+      >
+        <Box sx = {style}>
 
+        <button className="close-button" onClick={closeModal}>
+          &times;
+        </button>
+        
+        {showLogin ? (
+          <LoginForm closeModal={closeModal} switchToSignUp={switchToSignUp} />
+        ) : (
+          <SignUpForm closeModal={closeModal} switchToLogin={switchToLogin} />
+        )}
+        </Box>
+      </Modal></div>
       <GetStarted />
       <MiddleSection />
       <BottomSection />

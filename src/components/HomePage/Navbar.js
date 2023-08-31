@@ -10,7 +10,7 @@ import Menu from "@mui/material/Menu";
 import { Button, Chip } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
-export default function Navbar() {
+export default function Navbar({openModal}) {
   const [anchorEl, setAnchorEl] = useState(null);
   const [scrolled, setScrolled] = useState(false);
   
@@ -126,7 +126,12 @@ export default function Navbar() {
               open={Boolean(anchorEl)}
               onClose={handleClose}
             >
-              <MenuItem onClick={handleClose}>Login / Register</MenuItem>
+
+
+              <MenuItem onClick={openModal}>Login / Register</MenuItem>
+
+
+
               <MenuItem onClick={handleClose}>Profile</MenuItem>
               <MenuItem onClick={handleClose}>My account</MenuItem>
             </Menu>

@@ -2,6 +2,7 @@
 
 /* Style for the modal content */
 .modal-content {
+  z-index: 999;
     background-color: #fff;
     margin: 10% auto; /* Adjust the top margin to center the modal vertically */
     padding: 0px;

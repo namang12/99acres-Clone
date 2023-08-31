@@ -1,11 +1,38 @@
-
+/* 
 body{
     height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
+  } */
+  
+  .close-button {
+    position: absolute;
+    top: 2px;
+    right: 10px;
+    font-size: 30px;
+    background: none;
+    border: none;
+    z-index: 9999;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
   }
   
+    /* Style for the close button (optional) */
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    
+    .close:hover,
+    .close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
   .card{
     background-color:#fff;
     border:none;
