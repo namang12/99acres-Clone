@@ -1,16 +1,9 @@
-<<<<<<< HEAD
-import React , {useState} from "react";
-import { Box } from "@mui/material";
-
-
-=======
 import * as React from "react";
 import PropTypes from "prop-types";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 import Box from "@mui/material/Box";
 import Fab from "@mui/material/Fab";
 import Fade from "@mui/material/Fade";
->>>>>>> 0e229b2f01c2a4692ddb395cfa4f03cbfe53791c
 import {
   BottomSection,
   GetStarted,
@@ -21,10 +14,6 @@ import {
 } from "../components/HomePage";
 import StraightSharpIcon from "@mui/icons-material/StraightSharp";
 
-<<<<<<< HEAD
-const Home = () => {
-  
-=======
 import Footer from "../components/ListingPage/Footer"
 
 function ScrollTop(props) {
@@ -71,7 +60,6 @@ ScrollTop.propTypes = {
 };
 
 const Home = (props) => {
->>>>>>> 0e229b2f01c2a4692ddb395cfa4f03cbfe53791c
   return (
     <>
       <Box
