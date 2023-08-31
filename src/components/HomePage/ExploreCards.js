@@ -2,6 +2,9 @@ import React from "react";
 import { Box, Button, Typography } from "@mui/material";
 import { DarkTypography, LightTypography } from "../Common";
 import EastIcon from "@mui/icons-material/East";
+import { useDispatch } from "react-redux";
+import { openSearchModal } from "../../redux/SearchModal/SearchModalSlice";
+import { useNavigate } from "react-router-dom";
 
 const ExploreCards = ({
   id,
@@ -13,6 +16,9 @@ const ExploreCards = ({
   sublineText2,
   btnText,
 }) => {
+  const disptach = useDispatch();
+  const navigate = useNavigate();
+
   return (
     <>
       {id === 3 && (
@@ -87,6 +93,7 @@ const ExploreCards = ({
                 alt="assistImage"
                 style={{ width: "35%" }}
               />
+
               <Typography
                 sx={{
                   mt: 3,
@@ -168,6 +175,11 @@ const ExploreCards = ({
             {sublineText1} <br /> {sublineText2}
           </Typography>
           <Button
+            onClick={
+              btnText === "post your property for FREE"
+                ? () => navigate("/postproperty")
+                : () => disptach(openSearchModal())
+            }
             disableRipple
             sx={{
               mt: 3,

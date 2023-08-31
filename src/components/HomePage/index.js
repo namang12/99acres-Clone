@@ -5,6 +5,7 @@ import GetStarted from "./GetStarted";
 import MiddleSection from "./MiddleSection";
 import Navbar from "./Navbar";
 import SearchBox from "./SearchBox";
+import SearchModal from "./SearchModal";
 
 export {
   CarouselComponent,
@@ -14,4 +15,5 @@ export {
   MiddleSection,
   ExploreCards,
   BottomSection,
+  SearchModal,
 };
