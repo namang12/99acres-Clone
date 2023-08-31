@@ -44,7 +44,7 @@ const Footer = () => {
 
           <div className="text-wrapper-50">Our Partners</div>
           <div className="list-3">
-            <div className="div-wrapper-2">
+            <div className="div-wrapper-2a">
               <a href="https://www.naukri.com/" target="_blank">
                 <p className="text-wrapper-47">Naukri.com - Jobs in India</p>
               </a>
@@ -104,12 +104,12 @@ const Footer = () => {
                 </p>
               </a>
             </div>
-            <div className="div-wrapper-2">
+            <div className="div-wrapper-2a">
               <a href="https://www.paisabazaar.com/" target="_blank">
                 <p className="text-wrapper-51">PaisaBazaar.com</p>
               </a>
             </div>
-            <div className="div-wrapper-2">
+            <div className="div-wrapper-2a">
               <a href="https://www.ambitionbox.com/" target="_blank">
                 <p className="text-wrapper-51">AmbitionBox.com</p>
               </a>
