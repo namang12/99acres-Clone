@@ -49,103 +49,93 @@ const PostPropertyForm = () => {
   };
 
   return (
-    <div className="container-1">
-      <form onSubmit={(e) => onSubmit(e)}>
-        <div className="div-postproperty-6">
+    <div className="div-postform">
+      <div className="div-postproperty-6">
+        <form onSubmit={(e) => onSubmit(e)}>
           <p className="text-wrapper-9">
             Start posting your property, it’s free
           </p>
           <div className="text-wrapper-10">Add Basic Details</div>
+
           <div className="div-page-ppf">
             {/* Property Options Radio */}
             <div className="div-hd-d">
-              <div className="div-collapsewidget">
-                <div className="text-wrapper-11">You're looking to ...</div>
-              </div>
-              <div>
-                <label>
-                  <input
-                    type="radio"
-                    name="propertyOption"
-                    value={"Sell"}
-                    onChange={(e) => onInputChange(e)}
-                    className="r1"
-                  />
-                  <span className="sp1">Sell</span>
-                </label>
-                <label className="l2">
-                  <input
-                    type="radio"
-                    name="propertyOption"
-                    value={"Rent/Lease"}
-                    onChange={(e) => onInputChange(e)}
-                    className="r2"
-                  />
-                  <span className="sp2">Rent/Lease</span>
-                </label>
-                <label className="l3">
-                  <input
-                    type="radio"
-                    name="propertyOption"
-                    value={"PG"}
-                    onChange={(e) => onInputChange(e)}
-                    className="r3"
-                  />
-                  <span className="sp3">PG</span>
-                </label>
+              <div className="text-wrapper-11">You're looking to ...</div>
+              <div className="radiobutton-postform">
+                <input
+                  type="radio"
+                  name="propertyOption"
+                  value={"Sell"}
+                  id="sell"
+                  onChange={(e) => onInputChange(e)}
+                />
+                <label for="sell">Sell</label>
+
+                <input
+                  type="radio"
+                  name="propertyOption"
+                  value={"Rent/Lease"}
+                  id="Rent/Lease"
+                  onChange={(e) => onInputChange(e)}
+                />
+                <label for="Rent/Lease">Rent/Lease</label>
+
+                <input
+                  type="radio"
+                  name="propertyOption"
+                  value={"PG"}
+                  id="PG"
+                  onChange={(e) => onInputChange(e)}
+                />
+                <label for="PG">PG</label>
               </div>
             </div>
 
             {/* Property Type Radio */}
             <div className="div-hd-a">
-              <div className="and-it-s-a-wrapper">
-                <div className="text-wrapper-11">And it's a ...</div>
-              </div>
-              <div>
-                <label>
+              <div className="text-wrapper-11">And it's a ...</div>
+
+              <div style={{ display: "flex" }}>
+                <div className="radiobutton-postform">
                   <input
                     type="radio"
                     name="type"
                     value={"Flat"}
+                    id="Flat"
                     onChange={(e) => onInputChange(e)}
-                    className="type-r1"
                   />
-                  <span className="type-sp1">Flat</span>
-                </label>
-                <label className="type-l2">
+                  <label for="Flat">Flat</label>
+
                   <input
                     type="radio"
                     name="type"
                     value={"Villa"}
+                    id="Villa"
                     onChange={(e) => onInputChange(e)}
-                    className="type-r2"
                   />
-                  <span className="type-sp2">Villa</span>
-                </label>
-                <label className="type-l3">
+                  <label for="Villa">Villa</label>
+
                   <input
                     type="radio"
                     name="type"
                     value={"Land"}
+                    id="Land"
                     onChange={(e) => onInputChange(e)}
-                    className="type-r3"
                   />
-                  <span className="type-sp3">Land</span>
-                </label>
+                  <label for="Land">Land</label>
+                </div>
 
-                <Button
-                  variant="contained"
-                  component="label"
-                  className="image-upload"
-                >
-                  Upload Photo
-                  <input type="file" hidden onChange={handleImage} />
-                </Button>
+                <div className="div-uploadimage">
+                  <Button variant="contained" component="label">
+                    Upload Photo
+                    <input type="file" hidden onChange={handleImage} />
+                  </Button>
+                </div>
               </div>
             </div>
 
             {/* Property Area */}
-            <div className="div-hd-b">
+            <div className="div-inpfields" style={{marginTop:"7px"}}>
               <TextField
                 className="area-inp"
                 id="standard-basic"
@@ -168,7 +158,7 @@ const PostPropertyForm = () => {
             </div>
 
             {/* Address */}
-            <div className="div-hd-c">
+            <div className="div-inpfields">
               <TextField
                 className="address-inp"
                 id="standard-basic"
@@ -188,7 +178,8 @@ const PostPropertyForm = () => {
                 }}
               />
             </div>
-            <div className="div-hd-e">
+
+            <div className="div-inpfields">
               <TextField
                 className="city-inp"
                 id="standard-basic"
@@ -228,7 +219,7 @@ const PostPropertyForm = () => {
             </div>
 
             {/* Price */}
-            <div className="div-hd-f">
+            <div className="div-inpfields">
               <TextField
                 className="price-inp"
                 id="standard-basic"
@@ -255,6 +246,7 @@ const PostPropertyForm = () => {
               <p className="text-wrapper-17">
                 Your contact details for the buyer to reach you
               </p>
+              
               <div className="contact-wrapper">
                 <TextField
                   className="phone-inp"
@@ -288,8 +280,8 @@ const PostPropertyForm = () => {
               </div>
             </div>
           </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   );
 };
