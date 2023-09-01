@@ -1,12 +1,9 @@
 import React from "react";
 import { useState } from "react";
-// import Modal from "react-responsive-modal";
 import Backdrop from "@mui/material/Backdrop";
-
 import { Modal } from "@mui/material";
 import LoginForm from "../components/LoginSignUp/LoginForm";
 import SignUpForm from "../components/LoginSignUp/SignUpForm";
-// import "../components/HomePage/Modal.css";
 import PropTypes from "prop-types";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 import Box from "@mui/material/Box";
