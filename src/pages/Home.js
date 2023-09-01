@@ -23,18 +23,17 @@ import {
 } from "../components/HomePage";
 import StraightSharpIcon from "@mui/icons-material/StraightSharp";
 
-import Footer from "../components/ListingPage/Footer"
+import Footer from "../components/ListingPage/Footer";
 
 const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
   width: 800,
-  bgcolor: 'background.paper',
- 
-  boxShadow: 24,
+  bgcolor: "background.paper",
 
+  boxShadow: 24,
 };
 
 function ScrollTop(props) {
@@ -57,8 +56,6 @@ function ScrollTop(props) {
       });
     }
   };
-
- 
 
   return (
     <Fade in={trigger}>
@@ -83,15 +80,12 @@ ScrollTop.propTypes = {
 };
 
 const Home = (props) => {
-
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [showLogin, setShowLogin] = useState(true);
   const openModal = () => {
     console.log("open");
     setModalIsOpen(true);
   };
-
-  
 
   const closeModal = () => {
     setModalIsOpen(false);
@@ -115,7 +109,7 @@ const Home = (props) => {
           minHeight: "55vh",
         }}
       >
-          <Navbar openModal = {openModal}/>
+        <Navbar openModal={openModal} />
         <img
           src="assets/nav-home.jpg"
           alt="nav-home"
@@ -126,35 +120,41 @@ const Home = (props) => {
       <SearchModal />
       <div>
         <Modal
-        aria-labelledby="transition-modal-title"
-        aria-describedby="transition-modal-description"
-        open={modalIsOpen}
-        onClose={closeModal}
-        closeAfterTransition
-        slots={{ backdrop: Backdrop }}
-        slotProps={{
-          backdrop: {
-            timeout: 500,
-          },
-        }}
-        
-      >
-        <Box sx = {style}>
+          aria-labelledby="transition-modal-title"
+          aria-describedby="transition-modal-description"
+          open={modalIsOpen}
+          onClose={closeModal}
+          closeAfterTransition
+          slots={{ backdrop: Backdrop }}
+          slotProps={{
+            backdrop: {
+              timeout: 500,
+            },
+          }}
+        >
+          <Box sx={style}>
+            <button className="close-button" onClick={closeModal}>
+              &times;
+            </button>
 
-        <button className="close-button" onClick={closeModal}>
-          &times;
-        </button>
-        
-        {showLogin ? (
-          <LoginForm closeModal={closeModal} switchToSignUp={switchToSignUp} />
-        ) : (
-          <SignUpForm closeModal={closeModal} switchToLogin={switchToLogin} />
-        )}
-        </Box>
-      </Modal></div>
+            {showLogin ? (
+              <LoginForm
+                closeModal={closeModal}
+                switchToSignUp={switchToSignUp}
+              />
+            ) : (
+              <SignUpForm
+                closeModal={closeModal}
+                switchToLogin={switchToLogin}
+              />
+            )}
+          </Box>
+        </Modal>
+      </div>
       <GetStarted />
       <MiddleSection />
       <BottomSection />
+      <Footer />
       <ScrollTop {...props}>
         <Fab
           disableRipple
@@ -170,7 +170,6 @@ const Home = (props) => {
           <StraightSharpIcon sx={{ color: "#0078db", fontSize: "20px" }} />
         </Fab>
       </ScrollTop>
-      <Footer/>
     </>
   );
 };
