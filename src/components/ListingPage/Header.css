@@ -8,29 +8,20 @@
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 2;
+  z-index: 1;
 }
 
-.section {
+.header .section {
   align-items: center;
   display: flex;
   flex: 1;
-  flex-grow: 1;
   height: 72px;
   justify-content: space-between;
   padding: 9.5px 49.99px 9.5px 50px;
   position: relative;
 }
 
-.div-component-logo {
-  align-items: flex-start;
-  display: inline-flex;
-  flex: 0 0 auto;
-  padding: 0px 0px 4.53px;
-  position: relative;
-}
-
-.link-nnares-logo {
+.header .link-nnares-logo {
   background-image: url(https://generation-sessions.s3.amazonaws.com/47fd91ac5243f4715d39a2bd84d1cc10/img/link---nnares-logo-white-v2-png@2x.png);
   background-position: 50% 50%;
   background-size: cover;
@@ -39,37 +30,21 @@
   width: 104.99px;
 }
 
-.div-component {
+.header .div-component {
   height: 53px;
   position: relative;
   width: 615.67px;
 }
 
-.div-hmenu {
-  align-items: flex-start;
-  display: inline-flex;
-  left: 592px;
-  opacity: 0.8;
-  padding: 0.93px 0px 2.98e-7px;
-  position: absolute;
-  top: 14px;
-}
-
-.div-11 {
-  height: 24px;
-  position: relative;
-  width: 24px;
-}
-
-.div-pagecomponent-8 {
+.header .div-pagecomponent-8 {
   height: 42px;
-  left: 528px;
-  position: absolute;
+  left: 90%;
+  position: relative;
   top: 11px;
   width: 40px;
 }
 
-.pseudo-4 {
+.header .pseudo-4 {
   border-bottom-style: solid;
   border-bottom-width: 1.81px;
   border-color: #ffffff;
@@ -83,15 +58,7 @@
   width: 8px;
 }
 
-.i-icon-userwhite {
-  height: 24px;
-  left: 0;
-  position: absolute;
-  top: 1px;
-  width: 24px;
-}
-
-.pseudo-5 {
+.header .pseudo-5 {
   background-color: #c41f1f;
   border: 1px solid;
   border-color: #ffffff;
@@ -102,9 +69,9 @@
   width: 10px;
 }
 
-.account-icon{
-    font-size: 180%;
-    margin-top: -10px;
-    margin-left: -4px;
-    color: white;
+.header .account-icon {
+  font-size: 180%;
+  margin-top: -10px;
+  margin-left: -4px;
+  color: white;
 }

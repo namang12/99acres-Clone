@@ -17,11 +17,11 @@ const CenterBody = () => {
   return (
     <div className="center-body">
       <div className="container-2">
-        <div className="div-postproperty" />
+        <div className="div-postproperty"/>
         <div className="div-postproperty-3">
           {/* Center image with intro text and know more menu*/}
-          <div className="overlap-2">
-            <div className="div-display-l-bold" ref={postRef}>
+
+          <div className="overlap-2" ref={postRef}>
               <p className="sell-or-rent-your">
                 <span className="span">
                   Sell or Rent your Property
@@ -30,22 +30,22 @@ const CenterBody = () => {
                 <span className="text-wrapper-6">faster</span>
                 <span className="span"> with 99acres.com</span>
               </p>
-            </div>
+            
             <div className="span-postproperty">
-              <div className="span-postproperty-2" />
+              <div className="span-greentick"/>
               <div className="div-wrapper">
                 <div className="text-wrapper-7">Advertise for FREE</div>
               </div>
             </div>
-            <div className="span-postproperty-3">
-              <div className="span-postproperty-2" />
-              <div className="span-postproperty-4">
+            <div className="span-postproperty">
+              <div className="span-greentick" />
+              <div className="div-wrapper">
                 <div className="text-wrapper-7">Get unlimited enquiries</div>
               </div>
             </div>
 
-            <div className="span-postproperty overlap-3-text">
-              <div className="span-postproperty-2" />
+            <div className="span-postproperty">
+              <div className="span-greentick" />
               <div className="div-wrapper">
                 <div className="text-wrapper-7">
                   Get Shortlisted Buyers and Tenants
@@ -53,25 +53,24 @@ const CenterBody = () => {
               </div>
             </div>
 
-            <div className="span-postproperty overlap-4">
-              <div className="span-postproperty-2" />
+            <div className="span-postproperty">
+              <div className="span-greentick" />
               <div className="div-wrapper">
                 <div className="text-wrapper-7">
                   Assistance in co-ordinating site visits
                 </div>
               </div>
             </div>
-            <div className="overlap-3">
-              <div className="span-postproperty-9">
-                <div className="span-postproperty-10">
-                  <div className="span-postproperty-11" />
-                </div>
-              </div>
-              <div className="desktop-animation" />
-              <p className="p">* Available with Owner Assist Plans</p>
-            </div>
 
-            <div
+
+            <div className="overlap-3">
+              <div className="desktop-animation" />
+              <p className="div-ownerassitant">* Available with Owner Assist Plans</p>
+            </div>
+          </div>
+          
+          <div style={{width:"100%", display:"flex", justifyContent:"center",}}>
+          <div
               className="div-2"
               onClick={() => {
                 handleScroll(knowmoreRef.current);
@@ -82,21 +81,24 @@ const CenterBody = () => {
               </div>
               <span class="material-symbols-rounded">expand_more</span>
             </div>
-          </div>
+            </div>
+
+
 
           {/* How to Post with Begin to POst Your Property */}
           <div className="div-3" ref={knowmoreRef}>
+
             <div className="heading">
               <div className="text-wrapper-22">HOW TO POST</div>
-
               <p className="post-your-property">
                 Post Your Property in
                 <br />3 Simple Steps
               </p>
             </div>
+
             <div className="div-postpropsteps">
               <div className="div-4">
-                <div className="image-2" />
+                <div className="image-2"/>
                 <div className="heading-2">
                   <p className="div-5">
                     <span className="text-wrapper-6">01. </span>
@@ -113,6 +115,8 @@ const CenterBody = () => {
                   </p>
                 </div>
               </div>
+
+
               <div className="div-4">
                 <div className="image-3" />
                 <div className="heading-2">
@@ -130,7 +134,7 @@ const CenterBody = () => {
                 </div>
               </div>
               <div className="div-4">
-                <div className="image-4" />
+                <div className="image-4"/>
                 <div className="heading-2">
                   <p className="div-5">
                     <span className="text-wrapper-6">03. </span>
@@ -149,7 +153,7 @@ const CenterBody = () => {
               </div>
             </div>
             <div
-              className="button-2"
+              className="button-howtopost"
               onClick={() => {
                 handleScroll(postRef.current);
               }}
@@ -159,6 +163,7 @@ const CenterBody = () => {
           </div>
 
           {/* Banner Image */}
+          
           <div className="div-bannerimage">
             <img
               className="banner-image"
@@ -166,6 +171,7 @@ const CenterBody = () => {
             />
           </div>
           {/* Visitor Banner */}
+
           <div className="div-visitorsbanner">
             <div className="banner-wrapper">
               <p className="banner-text">
@@ -199,6 +205,7 @@ const CenterBody = () => {
 
       {/* Additional Benefits */}
       <div className="div-additional">
+        <div style={{width:"1195px"}}>
         <div className="text-wrapper-25-a">ADDITIONAL BENEFITS</div>
         <div className="everything-wrapper">
           <p className="text-wrapper-28">
@@ -206,9 +213,11 @@ const CenterBody = () => {
             <br />
             rent out your property faster…
           </p>
+          </div>
         </div>
+
         <div className="div-8">
-          <div className="you-can-easily-sell-wrapper">
+          <div className="additionalinfo-wrapper">
             <p className="text-wrapper-23">
               You can easily sell, rent out or lease a property online with
               99acres.com, India's best property portal. You can find the ideal
@@ -217,20 +226,16 @@ const CenterBody = () => {
               advertisement to sell or rent out a house, flat, apartment, villa,
               land, shop, office or showroom and all other types of residential
               and commercial real estate to get qualified enquiries.
-            </p>
-          </div>
-          <div className="whether-you-are-an-wrapper">
-            <p className="text-wrapper-23">
+            <br/>
+            <br/>
               Whether you are an owner, builder or broker or have a property for
               sale or office spaces for rent or lease, shops for rent/lease, put
               your independent house or flat on rent, you can
               <br />
               advertise your property for free, on 99acres.com, the best real
               estate property site.
-            </p>
-          </div>
-          <div className="element-com-is-one-wrapper">
-            <p className="text-wrapper-23">
+            <br/>
+            <br/>
               99acres.com is one of the most trustworthy channels to search
               buyers and tenants online for flats, independent houses, offices,
               shops, showrooms, warehouses and factories. What
@@ -243,9 +248,9 @@ const CenterBody = () => {
             </p>
           </div>
         </div>
-        <div className="btn-3">
+        <div className="btn-additionalinfopost">
         <div
-          className="button-3"
+          className="button-additionalinfopost"
           onClick={() => {
             handleScroll(postRef.current);
           }}
@@ -254,6 +259,7 @@ const CenterBody = () => {
         </div>
         </div>
       </div>
+
       <div className="faq">
       <Faq />
       </div>

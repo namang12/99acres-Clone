@@ -11,10 +11,9 @@ const Footer = () => {
     <div className="div-footer">
       <div className="div-footer-2">
         <div className="div-footer-3">
-
-          <div className="text-wrapper-46">99acres</div>
           <div className="list">
-            <div className="text-wrapper-47">Mobile Apps</div>
+            <div className="text-wrapper-46">99acres</div>
+            <div className="text-wrapper-48">Mobile Apps</div>
             <div className="text-wrapper-48">Our Services</div>
             <div className="text-wrapper-48">Price Trends</div>
             <div className="text-wrapper-48">Post your Property</div>
@@ -25,10 +24,9 @@ const Footer = () => {
             <div className="text-wrapper-48">Sitemap</div>
           </div>
 
-
-          <div className="text-wrapper-49">Company</div>
-          <div className="list-2">
-            <div className="text-wrapper-47">About us</div>
+          <div className="list">
+            <div className="text-wrapper-46">Company</div>
+            <div className="text-wrapper-48">About us</div>
             <div className="text-wrapper-48">Contact us</div>
             <div className="text-wrapper-48">Careers with us</div>
             <div className="text-wrapper-48">Terms & Conditions</div>
@@ -42,11 +40,11 @@ const Footer = () => {
             <div className="text-wrapper-48">Safety Guide</div>
           </div>
 
-          <div className="text-wrapper-50">Our Partners</div>
-          <div className="list-3">
+          <div className="list">
+            <div className="text-wrapper-46">Our Partners</div>
             <div className="div-wrapper-2a">
               <a href="https://www.naukri.com/" target="_blank">
-                <p className="text-wrapper-47">Naukri.com - Jobs in India</p>
+                <p className="text-wrapper-48">Naukri.com - Jobs in India</p>
               </a>
             </div>
             <div className="div-wrapper-2">
@@ -144,95 +142,105 @@ const Footer = () => {
           </div>
         </div>
 
-
-        <div className="div-footer-4">
+        <div className="list-2">
           <div className="text-wrapper-46">Contact Us</div>
+
           <p className="text-wrapper-52">Toll Free - 1800 41 99099</p>
           <p className="text-wrapper-53">
             Monday - Saturday (9:00Am to 7:00PM IST)
           </p>
           <div className="text-wrapper-54">Email - feedback@99acres.com</div>
           <div className="text-wrapper-55">Connect with us</div>
+
           <div className="overlap-8">
             <div className="div-footer-5">
               <div>
-              <a href="https://www.facebook.com/99acres/" target="_blank">
-                <FontAwesomeIcon
-                  icon={faFacebookF}
-                  style={{ color: "#ffffff", fontSize: "30px" }}
-                />
+                <a href="https://www.facebook.com/99acres/" target="_blank">
+                  <FontAwesomeIcon
+                    icon={faFacebookF}
+                    style={{ color: "#ffffff", fontSize: "30px" }}
+                  />
                 </a>
               </div>
-              <div className="div-11">
-              <a href="https://www.youtube.com/user/99acresindia" target="_blank">
-                <FontAwesomeIcon
-                  icon={faYoutube}
-                  style={{ color: "#ffffff", fontSize: "30px" }}
-                />
+
+              <div>
+                <a
+                  href="https://www.youtube.com/user/99acresindia"
+                  target="_blank"
+                >
+                  <FontAwesomeIcon
+                    icon={faYoutube}
+                    style={{ color: "#ffffff", fontSize: "30px" }}
+                  />
                 </a>
               </div>
-              <div className="div-11">
-              <a href="https://twitter.com/99acresIndia" target="_blank">
-                <FontAwesomeIcon
-                  icon={faTwitter}
-                  style={{ color: "#ffffff", fontSize: "30px" }}
-                />
+              <div>
+                <a href="https://twitter.com/99acresIndia" target="_blank">
+                  <FontAwesomeIcon
+                    icon={faTwitter}
+                    style={{ color: "#ffffff", fontSize: "30px" }}
+                  />
                 </a>
               </div>
-              <div className="div-11">
-              <a href="https://www.instagram.com/99acresindia/" target="_blank">
-                <FontAwesomeIcon
-                  icon={faInstagram}
-                  style={{ color: "#ffffff", fontSize: "30px" }}
-                />
+              <div>
+                <a
+                  href="https://www.instagram.com/99acresindia/"
+                  target="_blank"
+                >
+                  <FontAwesomeIcon
+                    icon={faInstagram}
+                    style={{ color: "#ffffff", fontSize: "30px" }}
+                  />
                 </a>
               </div>
             </div>
-            <div className="text-wrapper-56">Download the App</div>
-            <a href="https://play.google.com/store/apps/details?id=com.nnacres.app&hl=en&pli=1" target="_blank">
-            <img
-              className="get-it-img"
-              src="https://static.99acres.com/universalapp/img/Play.png"
-            />
+
+            <div className="text-wrapper-55">Download the App</div>
+            <a
+              href="https://play.google.com/store/apps/details?id=com.nnacres.app&hl=en&pli=1"
+              target="_blank"
+            >
+              <img
+                className="get-it-img"
+                src="https://static.99acres.com/universalapp/img/Play.png"
+              />
             </a>
-            <a href="https://apps.apple.com/in/app/99acres-property-search/id781765588" target="_blank">
-            <img
-              className="get-it-img"
-              src="https://static.99acres.com/universalapp/img/ios.png"
-            />
+            <a
+              href="https://apps.apple.com/in/app/99acres-property-search/id781765588"
+              target="_blank"
+            >
+              <img
+                className="get-it-img"
+                src="https://static.99acres.com/universalapp/img/ios.png"
+              />
             </a>
           </div>
+
           <div className="p-caption-subdued">
             <p className="text-wrapper-57">
               *Usage of 99acres.com to upload content showing area in non
               standard units or
-            </p>
-            <p className="text-wrapper-58">
+              <br />
               which enables targeting by religion/community/caste/race is
               prohibited. Please
-            </p>
-            <p className="text-wrapper-59">
+              <br />
               report inappropriate content by writing to us at
+              <span className="link-report-abuse">report abuse</span>
             </p>
-            <div className="link-report-abuse">report abuse</div>
           </div>
-          <div className="div-list-header">
-            <div className="overlap-group-8">
-              <p className="all-rights-reserved">
-                All trademarks are the property of their
-                <br />
-                respective owners.
-              </p>
-            </div>
-            <div className="overlap-group-8">
-              <p className="all-rights-reserved">
-                All rights reserved - Info Edge (India) Ltd.
-                <br />A
-              </p>
-              <div className="link-naukri-com">naukri.com</div>
-              <div className="text-wrapper-60">group venture.</div>
-            </div>
-          </div>
+
+          <p className="all-rights-reserved">
+            All trademarks are the property of their
+            <br />
+            respective owners.
+          </p>
+
+          <p className="all-rights-reserved">
+            All rights reserved - Info Edge (India) Ltd.
+            <br />A &nbsp;
+            <span className="link-naukri-com">naukri.com</span>&nbsp;
+            <span className="all-rights-reserved">group venture.</span>
+          </p>
         </div>
       </div>
     </div>

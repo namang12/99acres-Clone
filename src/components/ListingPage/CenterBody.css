@@ -5,11 +5,11 @@
 .center-body {
   background-color: transparent;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   width: 100%;
   overflow: hidden;
-  height: 3000px;
+  position: relative;
 }
 
 .center-body .container-2 {
@@ -33,51 +33,22 @@
   width: 100%;
 }
 
-.center-body .div-mainwrapper {
-  align-items: flex-start;
-  display: flex;
-  justify-content: center;
-  flex: 0 0 auto;
-  flex-wrap: wrap;
-  gap: 0px 0px;
-  margin-top: -0.01px;
-  max-width: 100%;
-  position: relative;
-  width: 100%;
-}
-
-.center-body .div-postproperty-2 {
-  background-color: #f4f5f7;
-  height: 200px;
-  left: 0;
-  position: absolute;
-  top: 4394px;
-  width: 100%;
-}
-
 .center-body .div-postproperty-3 {
   position: relative;
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
 .center-body .overlap-2 {
   height: 740px;
   left: 10%;
-  position: absolute;
+  position: relative;
   top: 0;
+  display: flex;
+  flex-direction: column;
   width: 100vw;
-}
-
-.center-body .div-display-l-bold {
-  align-items: flex-start;
-  display: inline-flex;
-  left: 0;
-  max-width: 485px;
-  padding: 0.09px 72px 0px 0px;
-  position: absolute;
-  top: 0;
 }
 
 .center-body .sell-or-rent-your {
@@ -87,8 +58,6 @@
   font-weight: 700;
   letter-spacing: 0;
   line-height: 42px;
-  margin-top: -1px;
-  position: relative;
   width: fit-content;
 }
 
@@ -103,12 +72,13 @@
 .center-body .span-postproperty {
   height: 24px;
   left: 0;
-  position: absolute;
-  top: 100px;
+  position: relative;
+  top: 10px;
   width: 620px;
+  margin-top: 10px;
 }
 
-.center-body .span-postproperty-2 {
+.center-body .span-greentick {
   border-bottom-style: solid;
   border-bottom-width: 0.91px;
   border-color: #28ad35;
@@ -126,9 +96,7 @@
   align-items: flex-start;
   display: inline-flex;
   left: 24px;
-  padding: 0px 0px 0.91px;
   position: absolute;
-  top: -1px;
 }
 
 .center-body .text-wrapper-7 {
@@ -144,22 +112,6 @@
   width: fit-content;
 }
 
-.center-body .span-postproperty-3 {
-  height: 24px;
-  left: 0;
-  position: absolute;
-  top: 132px;
-  width: 620px;
-}
-
-.center-body .span-postproperty-4 {
-  align-items: flex-start;
-  display: inline-flex;
-  left: 24px;
-  padding: 0px 0px 0.9px;
-  position: absolute;
-  top: -1px;
-}
 .center-body .overlap-3 {
   height: 565px;
   left: 0;
@@ -168,155 +120,18 @@
   width: 850px;
 }
 
-.center-body .overlap-3-text {
-  height: 565px;
-  left: 0;
-  position: absolute;
-  top: 162px;
-  width: 850px;
-}
-
-.center-body .span-postproperty-5 {
-  height: 24px;
-  left: 40px;
-  position: absolute;
-  top: 8px;
-  width: 620px;
-}
-
-.center-body .span-postproperty-wrapper {
-  align-items: flex-start;
-  display: flex;
-  height: 16px;
-  left: -5px;
-  padding: 1.41px 13.39px 3.97px 0.01px;
-  position: absolute;
-  top: 6px;
-  transform: rotate(45deg);
-  width: 24px;
-}
-
-.center-body .span-postproperty-6 {
-  border-bottom-style: solid;
-  border-bottom-width: 0.91px;
-  border-color: #28ad35;
-  border-right-style: solid;
-  border-right-width: 0.91px;
-  height: 10px;
-  position: relative;
-  /* transform: rotate(0deg); */
-  width: 5.01px;
-  margin-top: 2px;
-}
-
-.center-body .overlap-group-2 {
-  height: 25px;
-  left: 24px;
-  position: absolute;
-  top: -1px;
-  width: 308px;
-}
-
-.center-body .span-postproperty-7 {
-  align-items: flex-start;
-  display: inline-flex;
-  left: 0;
-  padding: 0px 0px 0.91px;
-  position: absolute;
-  top: 0;
-}
-
-.center-body .span-postproperty-8 {
-  align-items: flex-start;
-  display: inline-flex;
-  left: 296px;
-  padding: 2px 0px 0px 3px;
-  position: absolute;
-  top: 1px;
-}
-
-.center-body .text-wrapper-8 {
-  color: #0078db;
-  font-family: "Open Sans", Helvetica;
-  font-size: 16px;
-  font-weight: 400;
-  letter-spacing: 0;
-  line-height: normal;
-  margin-top: -1px;
-  position: relative;
-  width: fit-content;
-}
-
-.center-body .span-postproperty-9 {
-  height: 24px;
-  left: 40px;
-  position: absolute;
-  top: 40px;
-  width: 620px;
-}
-
-.center-body .span-postproperty-10 {
-  align-items: flex-start;
-  display: flex;
-  height: 16px;
-  left: -5px;
-  padding: 1.41px 13.39px 3.98px 0.01px;
-  position: absolute;
-  top: 6px;
-  transform: rotate(45deg);
-  width: 24px;
-}
-
-.center-body .span-postproperty-11 {
-  border-bottom-style: solid;
-  border-bottom-width: 0.91px;
-  border-color: #28ad35;
-  border-right-style: solid;
-  border-right-width: 0.91px;
-  height: 9.98px;
-  position: relative;
-  transform: rotate(45deg);
-  width: 5px;
-}
-
-.center-body .overlap-4 {
-  height: 565px;
-  left: 0;
-  position: absolute;
-  top: 192px;
-  width: 100%;
-}
-
-.center-body .span-postproperty-12 {
-  align-items: flex-start;
-  display: inline-flex;
-  left: 0;
-  padding: 0px 0px 0.9px;
-  position: absolute;
-  top: 0;
-}
-
-.center-body .span-postproperty-13 {
-  align-items: flex-start;
-  display: inline-flex;
-  left: 318px;
-  padding: 2px 0px 0px 3px;
-  position: absolute;
-  top: 1px;
-}
-
 .center-body .desktop-animation {
   background-image: url(https://generation-sessions.s3.amazonaws.com/47fd91ac5243f4715d39a2bd84d1cc10/img/desktop-animation-compress-gif.gif);
   background-position: 50% 50%;
   background-size: cover;
   height: 565px;
-  left: -20px;
-  position: absolute;
+  left: 5%;
+  position: relative;
   top: 0;
-  width: 90%;
+  width: 80%;
 }
 
-.center-body .p {
+.center-body .div-ownerassitant {
   color: #8993a4;
   font-family: "Open Sans", Helvetica;
   font-size: 12px;
@@ -340,10 +155,21 @@
   display: inline-flex;
   gap: 3px;
   justify-content: center;
-  left: 36.285%;
+  align-items: center;
   padding: 9.9px 9.9px 9.91px 18.91px;
   position: absolute;
   top: 700px;
+}
+
+.center-body .text-wrapper-15 {
+  font-family: "Open Sans", Helvetica;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 24px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
 }
 
 .center-body .div-wrapper-2 {
@@ -353,20 +179,15 @@
   position: relative;
 }
 
-.center-body .i-icons-common {
-  height: 15.99px;
-  position: relative;
-  width: 15.99px;
-}
-
 .center-body .div-3 {
-  height: 468px;
   left: 0;
-  position: absolute;
-  top: 804px;
+  position: relative;
+  top: 50px;
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .center-body .heading {
@@ -374,9 +195,6 @@
   display: flex;
   flex-direction: column;
   gap: 7.7px;
-  left: 0;
-  position: absolute;
-  top: -1px;
   width: 100%;
 }
 
@@ -387,8 +205,6 @@
   font-weight: 600;
   letter-spacing: 0;
   line-height: 16px;
-  margin-top: -1px;
-  position: relative;
   text-align: center;
   white-space: nowrap;
   width: fit-content;
@@ -401,8 +217,6 @@
   font-weight: 700;
   letter-spacing: 0;
   line-height: 56px;
-  margin-top: -1px;
-  position: relative;
   text-align: center;
   width: fit-content;
 }
@@ -413,8 +227,8 @@
   display: flex;
   left: 0;
   padding: 0px 0.15px 0px 0px;
-  position: absolute;
-  top: 136px;
+  position: relative;
+  top: 10px;
   width: 100%;
 }
 
@@ -430,7 +244,7 @@
   background-size: cover;
   height: 48px;
   left: 32px;
-  position: absolute;
+  position: relative;
   top: 32px;
   width: 48px;
 }
@@ -440,8 +254,8 @@
   display: flex;
   left: 32px;
   padding: 0px 0px 10.98px;
-  position: absolute;
-  top: 116px;
+  position: relative;
+  top: 59px;
   width: 336px;
 }
 
@@ -452,7 +266,6 @@
   font-weight: 600;
   letter-spacing: 0;
   line-height: 28px;
-  margin-top: -1px;
   position: relative;
   white-space: nowrap;
   width: fit-content;
@@ -462,19 +275,18 @@
   align-items: flex-start;
   display: flex;
   left: 32px;
-  position: absolute;
-  top: 154px;
+  position: relative;
+  top: 59px;
   width: 336px;
 }
 
 .center-body .text-wrapper-23 {
   color: #42526e;
-  font-family: "Open Sans", Helvetica;
+  font-family: "Open Sans", "Helvetica";
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 0;
   line-height: 20px;
-  margin-top: -1px;
   position: relative;
   width: fit-content;
 }
@@ -485,7 +297,7 @@
   background-size: cover;
   height: 48px;
   left: 32px;
-  position: absolute;
+  position: relative;
   top: 32px;
   width: 48px;
 }
@@ -496,22 +308,22 @@
   background-size: cover;
   height: 48px;
   left: 32px;
-  position: absolute;
+  position: relative;
   top: 32px;
   width: 48px;
 }
 
-.center-body .button-2 {
+.center-body .button-howtopost {
   align-items: flex-start;
   background-color: #0078db;
   border-radius: 4px;
   box-shadow: 0px 1px 4px #006ac233;
   display: inline-flex;
   justify-content: center;
-  /* left: 44.35%; */
+  max-height: 40px;
   padding: 7.99px 15.53px 8px 15.73px;
-  position: absolute;
-  top: 432px;
+  position: relative;
+  top: 25px;
 }
 
 .center-body .text-wrapper-24 {
@@ -528,6 +340,16 @@
   width: fit-content;
 }
 
+.center-body .div-bannerimage {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  margin-top: 150px;
+}
+.center-body .banner-image {
+  height: 345px;
+}
+
 .center-body .div-visitorsbanner {
   align-items: flex-start;
   background-color: #ffffff;
@@ -535,25 +357,12 @@
   display: flex;
   flex-direction: column;
   gap: 50.18px;
-  /* left: 22vw; */
   padding: 75px 95px;
-  position: absolute;
-  top: 1650px;
-  /* max-width: 805px; */
+  position: relative;
   width: fit-content;
   margin: -200px auto auto;
 }
 
-.div-bannerimage {
-  display: flex;
-  position: relative;
-  top: 1320px;
-  justify-content: center;
-}
-.banner-image {
-  width: 100%;
-  height: 345px;
-}
 .center-body .banner-wrapper {
   align-items: flex-start;
   display: flex;
@@ -594,11 +403,9 @@
   font-size: 14px;
   font-weight: 600;
   height: 16px;
-  left: 0;
-  letter-spacing: 0;
   line-height: 16px;
-  position: absolute;
-  top: -2px;
+  position: relative;
+  left: 2px;
   white-space: nowrap;
 }
 
@@ -608,11 +415,10 @@
   font-size: 40px;
   font-weight: 600;
   height: 56px;
-  left: 0;
   letter-spacing: 0;
   line-height: 56px;
-  position: absolute;
-  top: 24px;
+  position: relative;
+  top: 8px;
   white-space: nowrap;
 }
 
@@ -625,8 +431,8 @@
   left: 0;
   letter-spacing: 0;
   line-height: 20px;
-  position: absolute;
-  top: 91px;
+  position: relative;
+  top: 8px;
   white-space: nowrap;
 }
 
@@ -635,11 +441,9 @@
   justify-content: center;
   display: flex;
   flex-direction: column;
-  left: 0;
-  padding: 0px 0.15px 0px 0px;
-  position: absolute;
-  top: 2040px;
+  position: relative;
   width: 100%;
+  margin-top: 100px;
 }
 
 .center-body .text-wrapper-25-a {
@@ -647,19 +451,16 @@
   font-family: "Open Sans", Helvetica;
   font-size: 14px;
   font-weight: 600;
-  padding: 0px 1080px 20.99px 0px;
   height: 16px;
+  position: relative;
   letter-spacing: 0;
   line-height: 16px;
-  position: absolute;
 }
 
 .center-body .everything-wrapper {
   align-items: flex-start;
   display: inline-flex;
-  padding: 0px 579px 20.99px 0px;
-  position: absolute;
-  top: 15px;
+  position: relative;
 }
 
 .center-body .text-wrapper-28 {
@@ -669,7 +470,6 @@
   font-weight: 700;
   letter-spacing: 0;
   line-height: 56px;
-  margin-top: -1px;
   position: relative;
   width: fit-content;
 }
@@ -678,36 +478,18 @@
   align-items: flex-start;
   display: inline-flex;
   flex-direction: column;
-  padding: 0px 40px 20.99px 0px;
-  position: absolute;
-  top: 148px;
-}
-
-.center-body .you-can-easily-sell-wrapper {
-  align-items: flex-start;
-  display: inline-flex;
-  flex: 0 0 auto;
-  padding: 0px 9px 15.98px 0px;
   position: relative;
 }
 
-.center-body .whether-you-are-an-wrapper {
+.center-body .additionalinfo-wrapper {
   align-items: flex-start;
   display: inline-flex;
+  flex-direction: column;
   flex: 0 0 auto;
-  padding: 0px 32px 15.98px 0px;
   position: relative;
 }
 
-.center-body .element-com-is-one-wrapper {
-  align-items: flex-start;
-  display: inline-flex;
-  flex: 0 0 auto;
-  padding: 0px 14px 15.98px 0px;
-  position: relative;
-}
-
-.center-body .button-3 {
+.center-body .button-additionalinfopost {
   align-items: flex-start;
   background-color: #0078db;
   border-radius: 4px;
@@ -715,19 +497,21 @@
   display: inline-flex;
   margin: auto;
   padding: 8px 15.53px 7.99px 15.73px;
-  position: absolute;
-  top: 356px;
+  position: relative;
+  justify-content: center;
+  max-height: 40px;
+  top: 25px;
 }
 
-.center-body .btn-3 {
-  padding: 0px 1239px 20.99px 0px;
+.center-body .btn-additionalinfopost{
+  padding: 0px 965px 20.99px 0px;
 }
 
 .center-body .faq {
   display: flex;
   justify-content: center;
-  height: 750px;
-  position: absolute;
-  top: 2540px;
-  width: 68%;
+  position: relative;
+  width: 100%;
+  margin-top: 60px;
+  margin-bottom: 50px;
 }

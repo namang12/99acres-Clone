@@ -1,64 +1,59 @@
-.container-1 .div-hd-bbd {
+.faq-post{
   display: flex;
   justify-content: center;
-  height: 750px;
+  flex-direction: column;
+  width: 1185px;
 }
 
-.all-accordion {
-  position: relative;
-  top: 100px;
-  max-height: 650px;
-}
-
-.container-1 .text-wrapper-29 {
+.faq-post .text-wrapper-29 {
   color: #8993a4;
   font-family: "Open Sans", Helvetica;
   font-size: 14px;
   font-weight: 600;
   height: 16px;
-  left: 0;
   letter-spacing: 0;
   line-height: 16px;
-  position: absolute;
-  top: 0;
+  position: relative;
   white-space: nowrap;
 }
 
-.container-1 .heading-frequently {
+.faq-post .heading-frequently {
   color: #091e42;
   font-family: "Open Sans", Helvetica;
   font-size: 40px;
   font-weight: 700;
   height: 56px;
-  left: 0;
-  letter-spacing: 0;
   line-height: 56px;
-  position: absolute;
-  top: 16px;
   white-space: nowrap;
 }
 
-.container-1 .text-wrapper-30 {
+.all-accordion {
+  position: relative;
+  margin-top: 15px;
+}
+
+.MuiPaper-elevation{
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.faq-post .text-wrapper-30 {
   color: #091e42;
-  font-family: "Open Sans", Helvetica;
+  font-family: "Open Sans", "Helvetica";
   font-size: 20px;
   font-weight: 600;
   letter-spacing: 0;
   line-height: 28px;
-  margin-top: -1px;
-  position: relative;
   white-space: nowrap;
   width: fit-content;
 }
 
-.container-1 .div-9 {
+.faq-post .div-9 {
   color: #000000;
   font-family: "Open Sans", Helvetica;
   font-size: 16px;
   font-weight: 400;
   letter-spacing: 0;
   line-height: normal;
-  margin-top: -1px;
-  position: relative;
   width: fit-content;
 }
