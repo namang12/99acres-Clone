@@ -23,7 +23,8 @@ const LoginForm = ({ closeModal, switchToSignUp }) => {
               <div class="h-100 d-flex justify-content-center align-items-center">
                 <div class="py-4 px-3">
                   <form onSubmit={handleSubmit}>
-                  <h4>LOGIN</h4>
+                  <h4><u>LOGIN</u></h4>
+                  <div style= {{width: "20px", height: "20px"}}></div>
                   <div class="row mt-2">
                     <div class="col-md-12">
                       <div class="input-field">
@@ -40,7 +41,7 @@ const LoginForm = ({ closeModal, switchToSignUp }) => {
                       </div>
                     </div>
                   </div>
-                  <span class="">Forgot password ? <span style={{ color: "white" }}>kfm3;offojfoFM3;FM3;FFO43FOL4KGFO3f</span></span>
+                  <span class="" style= {{color: "blue"}}>Forgot password ? <span style={{ color: "white" }}>kfm3;offojfoFM3;FM3;FFO43FOL4KGFO3f</span> </span>
                   <div class="row mt-2">
                     <div class="col-md-12">
                       <button class="btn btn-primary w-100 signup-button">LOGIN</button>
@@ -55,8 +56,8 @@ const LoginForm = ({ closeModal, switchToSignUp }) => {
                 </div>
               </div>
             </div>
-            <div class="col-md-6 custom-width" style={{width:"260px"}}> {/* New col-md-4 */}
-              <div class="right-side-content" style={{width: "260px"}}>
+            <div class="col-md-6 custom-width" style={{width:"300px"}}> {/* New col-md-4 */}
+              <div class="right-side-content" style={{width: "300px"}}>
                 <div class="content d-flex flex-column" style = {{ marginTop: "-180px"}}>
                   <h1>99acres</h1>
                   <h6>Login to your account to <br />unlock these benefits </h6>

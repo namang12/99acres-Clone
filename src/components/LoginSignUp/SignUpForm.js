@@ -73,7 +73,8 @@ const SignUpForm = ({ closeModal, switchToLogin }) => {
                                 : 'blue'}}><u>Sign in here.</u>
         </span>
                                   </div> </div> </div> </div> 
-                                  <div class="col-md-6 custom-width" style={{width:"260px"}} > <div class="right-side-content" style={{width: "260px"}}>
+                                  <div class="col-md-6 custom-width" style={{width:"260px"}} >
+                                     <div class="right-side-content" style={{width: "260px"}}>
                                      <div class="content d-flex flex-column" style = {{ marginTop: "-180px"}} >
                                      <h1>99acres</h1>
                                       <h6>Create an account to <br/>unlock these benefits </h6> 

@@ -308,6 +308,11 @@ const BottomSection = () => {
           />
         </Grid>
       </Grid>
+      <img
+        src="assets/d_hp_app_banner.webp"
+        alt="bannerImage"
+        style={{ width: "100%", marginTop: 32 }}
+      />
     </Container>
   );
 };
