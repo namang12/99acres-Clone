@@ -10,10 +10,10 @@ import Menu from "@mui/material/Menu";
 import { Button, Chip } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
-export default function Navbar({openModal}) {
+export default function Navbar({ openModal, isHome = true }) {
   const [anchorEl, setAnchorEl] = useState(null);
   const [scrolled, setScrolled] = useState(false);
-  
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -40,13 +40,12 @@ export default function Navbar({openModal}) {
     setAnchorEl(null);
   };
 
-
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
         position="fixed"
         sx={{
-          background: scrolled ? "#005CA8" : "none",
+          background: scrolled ? "#005CA8" : isHome ? "none" : "#005CA8",
           boxShadow: "none",
           transition: "0.5s ease",
         }}
@@ -126,11 +125,7 @@ export default function Navbar({openModal}) {
               open={Boolean(anchorEl)}
               onClose={handleClose}
             >
-
-
               <MenuItem onClick={openModal}>Login / Register</MenuItem>
-
-
 
               <MenuItem onClick={handleClose}>Profile</MenuItem>
               <MenuItem onClick={handleClose}>My account</MenuItem>
