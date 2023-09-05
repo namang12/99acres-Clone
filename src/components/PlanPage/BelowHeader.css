@@ -1,0 +1,153 @@
+.div-belowheader {
+  align-items: flex-start;
+  background-color: #feefd4;
+  display: flex;
+  flex-direction: column;
+  height: 72px;
+  padding: 0px 0px 0px 72px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.div-belowheader .div {
+  align-items: flex-start;
+  display: flex;
+  height: 22px;
+  padding: 0.92px 4px 1.08px 0px;
+  position: relative;
+  width: 24px;
+}
+
+.div-belowheader .i-icons-bosd {
+  height: 20px;
+  position: relative;
+  width: 20px;
+}
+
+.div-belowheader .span {
+  top: 22px;
+  position: relative;
+  width: 422.38px;
+}
+
+.div-belowheader .for-viewing-final {
+  color: transparent;
+  font-family: "Open Sans-SemiBold", Helvetica;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.div-belowheader .text-wrapper {
+  color: #041533;
+  font-weight: 600;
+}
+
+.div-belowheader .text-wrapper-2 {
+  color: #0078db;
+  font-family: "Open Sans-Bold", Helvetica;
+  font-weight: 700;
+}
+
+.div-pagecomponent-lw {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.div-pagecomponent-lw .div-overlay {
+  align-self: stretch;
+  background-color: #f7f8fa;
+  height: 96px;
+  position: relative;
+  width: 100%;
+}
+
+.div-pagecomponent-lw .div-2 {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 3px 8px #1f5ca333;
+  height: 78.99px;
+  margin-top: -39px;
+  position: relative;
+  width: 614px;
+}
+
+.div-pagecomponent-lw .div-owner {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  gap: 12.99px;
+  left: 16px;
+  position: relative;
+  top: 30px;
+  width: 193px;
+}
+
+.div-pagecomponent-lw .i-icons-bosd {
+  align-self: stretch;
+  position: relative;
+  width: 24px;
+}
+
+.div-pagecomponent-lw .div-index-dashstyle {
+  background: linear-gradient(
+    180deg,
+    rgba(235, 236, 240, 0) 0%,
+    rgb(235, 236, 240) 50%,
+    rgba(235, 236, 240, 0) 100%
+  );
+  height: 95px;
+  left: 209px;
+  position: absolute;
+  top: -8px;
+  width: 1px;
+}
+
+.div-pagecomponent-lw .div-dealer {
+  left: 210px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  gap: 12.99px;
+  position: relative;
+  width: 193px;
+  top: 15px;
+}
+
+.div-pagecomponent-lw .text-wrapper-4 {
+  color: #42526e;
+  font-family: "Open Sans-SemiBold", Helvetica;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1px;
+  position: relative;
+  width: fit-content;
+}
+
+.div-pagecomponent-lw .div-index-dashstyle-2 {
+  background: linear-gradient(
+    180deg,
+    rgba(235, 236, 240, 0) 0%,
+    rgb(235, 236, 240) 50%,
+    rgba(235, 236, 240, 0) 100%
+  );
+  height: 95px;
+  left: 404px;
+  position: absolute;
+  top: -8px;
+  width: 1px;
+}
+
+.div-pagecomponent-lw .div-builder {
+  left: 445px;
+  width: 193px;
+  display: flex;
+  position: relative;
+  width: 193px;
+  top: -3px;
+}
