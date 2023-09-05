@@ -5,6 +5,7 @@ import EastIcon from "@mui/icons-material/East";
 import { useDispatch } from "react-redux";
 import { openSearchModal } from "../../redux/SearchModal/SearchModalSlice";
 import { useNavigate } from "react-router-dom";
+import styles from "../HomePage/CSS/ExploreCards.module.css";
 
 const ExploreCards = ({
   id,
@@ -145,11 +146,13 @@ const ExploreCards = ({
         </Box>
       )}
       <Box sx={{ mt: 4, display: "flex", alignItems: "center", mb: 3 }}>
-        <img
-          src={imageSrc}
-          alt="exploreImage"
-          style={{ borderRadius: "8px" }}
-        />
+        <Box sx={{ overflow: "hidden", borderRadius: 2 }}>
+          <img
+            src={imageSrc}
+            alt="exploreImage"
+            className={styles.exploreImage}
+          />
+        </Box>
         <Box sx={{ ml: 8 }}>
           <LightTypography text={lightText} />
           <Typography

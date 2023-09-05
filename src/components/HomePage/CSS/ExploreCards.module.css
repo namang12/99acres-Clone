@@ -1,0 +1,9 @@
+.exploreImage {
+  border-radius: 8px;
+  transition: 0.7s ease;
+  cursor: pointer;
+}
+
+.exploreImage:hover {
+  scale: 1.1;
+}

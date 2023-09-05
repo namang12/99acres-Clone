@@ -1,4 +1,4 @@
-.faq-post{
+.faq-post {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -32,9 +32,9 @@
   margin-top: 15px;
 }
 
-.MuiPaper-elevation{
+.MuiPaper-elevation {
   border: none !important;
-  box-shadow: none !important;
+  /* box-shadow: none !important; */
 }
 
 .faq-post .text-wrapper-30 {
