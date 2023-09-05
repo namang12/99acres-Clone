@@ -145,6 +145,7 @@ const FiltersSection = () => {
                 <Chip
                   key={idx}
                   label={`${room} BHK`}
+                  disableRipple
                   variant={"outlined"}
                   icon={
                     noOfBedrooms.includes(room) ? <DoneIcon /> : <AddIcon />
@@ -160,6 +161,7 @@ const FiltersSection = () => {
                       : "#42526E",
                     fontWeight: noOfBedrooms.includes(room) ? 600 : 400,
                     "& .MuiChip-icon": {
+                      fontFamily: "Open Sans",
                       fontSize: "14px",
                       color: noOfBedrooms.includes(room)
                         ? "#0078db"
@@ -199,6 +201,7 @@ const FiltersSection = () => {
                 <Chip
                   key={idx}
                   label={type}
+                  disableRipple
                   variant={"outlined"}
                   icon={
                     propertyType.includes(type) ? <DoneIcon /> : <AddIcon />
@@ -214,6 +217,7 @@ const FiltersSection = () => {
                       : "#42526E",
                     fontWeight: propertyType.includes(type) ? 600 : 400,
                     "& .MuiChip-icon": {
+                      fontFamily: "Open Sans",
                       fontSize: "14px",
                       color: propertyType.includes(type)
                         ? "#0078db"

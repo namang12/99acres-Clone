@@ -2,7 +2,10 @@ import { Box, Breadcrumbs, Container, Grid, Link } from "@mui/material";
 import React from "react";
 import { Navbar } from "../components/HomePage";
 import { useNavigate } from "react-router";
-import { FiltersSection } from "../components/PropertiesPage";
+import {
+  FiltersSection,
+  PropertiesListSection,
+} from "../components/PropertiesPage";
 
 const Properties = () => {
   const navigate = useNavigate();
@@ -56,7 +59,10 @@ const Properties = () => {
           <Grid item md={3.5}>
             <FiltersSection />
           </Grid>
-          <Grid item md={8.5}></Grid>
+          <Grid item md={0.2}></Grid>
+          <Grid item md={8.3}>
+            <PropertiesListSection />
+          </Grid>
         </Grid>
       </Container>
     </Box>
