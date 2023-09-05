@@ -1,11 +1,14 @@
 import React from "react";
 import "./Header.css";
+import { useNavigate } from "react-router";
 
 const Header = () => {
+  const navigate = useNavigate();
+
   return (
     <header className="header">
       <div className="section">
-        <div className="link-nnares-logo" />
+        <div className="link-nnares-logo" onClick={() => navigate("/")} />
 
         <div className="div-component">
           <div className="div-pagecomponent-8">

@@ -53,11 +53,13 @@ export default function Navbar({ openModal, isHome = true }) {
         <Toolbar>
           <Typography
             component="div"
+            onClick={() => navigate("/")}
             sx={{
               flexGrow: 1,
               fontFamily: "Open Sans",
               fontWeight: 600,
               fontSize: "30px",
+              cursor: "pointer",
             }}
           >
             99acres
