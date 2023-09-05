@@ -8,6 +8,7 @@ const PostPropertyForm = () => {
   const [propertyData, setPropertyData] = useState({
     propertyOption: "",
     type: "",
+    image: null,
     area: "",
     address: "",
     city: "",
@@ -17,12 +18,10 @@ const PostPropertyForm = () => {
     emailid: "",
   });
 
-  const [image, setImage] = useState();
-  const formData = new FormData();
-
   const {
     propertyOption,
     type,
+    image,
     area,
     address,
     city,
@@ -38,14 +37,36 @@ const PostPropertyForm = () => {
   };
 
   const handleImage = (e) => {
-    setImage(e.target.files[0]);
-    formData.append("photo", image);
-    setPropertyData({ ...propertyData, photo: e.target.files[0] });
+    setPropertyData({ ...propertyData, image: e.target.files[0] });
   };
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    await axios.post("http://localhost:5000/propertyData", propertyData);
+    const formData = new FormData();
+    formData.append("propertyOption", propertyOption);
+    formData.append("type", type);
+    formData.append("image", image);
+    formData.append("area", area);
+    formData.append("address", address);
+    formData.append("city", city);
+    formData.append("state", state);
+    formData.append("price", price);
+    formData.append("phoneNumber", phoneNumber);
+    formData.append("emailid", emailid);
+    try {
+      const response = await axios.post(
+        "http://localhost:5000/propertyData",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
@@ -135,7 +156,7 @@ const PostPropertyForm = () => {
             </div>
 
             {/* Property Area */}
-            <div className="div-inpfields" style={{marginTop:"7px"}}>
+            <div className="div-inpfields" style={{ marginTop: "7px" }}>
               <TextField
                 className="area-inp"
                 id="standard-basic"
@@ -246,7 +267,7 @@ const PostPropertyForm = () => {
               <p className="text-wrapper-17">
                 Your contact details for the buyer to reach you
               </p>
-              
+
               <div className="contact-wrapper">
                 <TextField
                   className="phone-inp"

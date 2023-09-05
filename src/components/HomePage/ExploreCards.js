@@ -123,6 +123,7 @@ const ExploreCards = ({
               </Typography>
               <Button
                 disableRipple
+                onClick={() => navigate("/subscription")}
                 sx={{
                   textTransform: "none",
                   color: "#0078DB",
