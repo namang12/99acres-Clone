@@ -90,7 +90,7 @@ const PostPropertyForm = () => {
                   id="sell"
                   onChange={(e) => onInputChange(e)}
                 />
-                <label for="sell">Sell</label>
+                <label htmlFor="sell">Sell</label>
 
                 <input
                   type="radio"
@@ -99,7 +99,7 @@ const PostPropertyForm = () => {
                   id="Rent/Lease"
                   onChange={(e) => onInputChange(e)}
                 />
-                <label for="Rent/Lease">Rent/Lease</label>
+                <label htmlFor="Rent/Lease">Rent/Lease</label>
 
                 <input
                   type="radio"
@@ -108,7 +108,7 @@ const PostPropertyForm = () => {
                   id="PG"
                   onChange={(e) => onInputChange(e)}
                 />
-                <label for="PG">PG</label>
+                <label htmlFor="PG">PG</label>
               </div>
             </div>
 
@@ -125,7 +125,7 @@ const PostPropertyForm = () => {
                     id="Flat"
                     onChange={(e) => onInputChange(e)}
                   />
-                  <label for="Flat">Flat</label>
+                  <label htmlFor="Flat">Flat</label>
 
                   <input
                     type="radio"
@@ -134,7 +134,7 @@ const PostPropertyForm = () => {
                     id="Villa"
                     onChange={(e) => onInputChange(e)}
                   />
-                  <label for="Villa">Villa</label>
+                  <label htmlFor="Villa">Villa</label>
 
                   <input
                     type="radio"
@@ -143,7 +143,7 @@ const PostPropertyForm = () => {
                     id="Land"
                     onChange={(e) => onInputChange(e)}
                   />
-                  <label for="Land">Land</label>
+                  <label htmlFor="Land">Land</label>
                 </div>
 
                 <div className="div-uploadimage">

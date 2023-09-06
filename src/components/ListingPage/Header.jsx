@@ -13,7 +13,7 @@ const Header = () => {
         <div className="div-component">
           <div className="div-pagecomponent-8">
             <div className="pseudo-5" />
-            <span class="material-symbols-rounded account-icon">
+            <span className="material-symbols-rounded account-icon">
               account_circle
             </span>
             <div className="pseudo-4" />
