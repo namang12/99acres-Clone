@@ -9,8 +9,9 @@ import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import { Button, Chip } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useSnackbar } from "notistack";
+import { clearStore } from "../../redux/User/UserSlice";
 
 export default function Navbar({ openModal, isHome = true }) {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -18,6 +19,7 @@ export default function Navbar({ openModal, isHome = true }) {
   const { user } = useSelector((store) => store.user);
   const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -149,7 +151,13 @@ export default function Navbar({ openModal, isHome = true }) {
                 <MenuItem onClick={openModal}>Login / Register</MenuItem>
               )}
               {user && <MenuItem onClick={handleClose}>Profile</MenuItem>}
-              {user && <MenuItem onClick={handleClose}>Logout</MenuItem>}
+              {user && (
+                <MenuItem
+                  onClick={() => dispatch(clearStore("Logging out..."))}
+                >
+                  Logout
+                </MenuItem>
+              )}
             </Menu>
           </div>
         </Toolbar>

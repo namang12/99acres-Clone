@@ -50,6 +50,7 @@ const SearchSlice = createSlice({
     handleWithPhotos: (state) => {
       state.withPhotos = !state.withPhotos;
     },
+    clearSearchState: (state) => initialState,
   },
 });
 
@@ -61,5 +62,6 @@ export const {
   handleArea,
   handleWithPhotos,
   handleChange,
+  clearSearchState,
 } = SearchSlice.actions;
 export default SearchSlice.reducer;

@@ -2,8 +2,13 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import {
   addUserToLocalStorage,
   getUserFromLocalStorage,
+  removeUserFromLocalStorage,
 } from "../../utils/localStorage";
-import { loginUserThunk, registerUserThunk } from "./UserThunk";
+import {
+  clearStoreThunk,
+  loginUserThunk,
+  registerUserThunk,
+} from "./UserThunk";
 import { toast } from "react-toastify";
 
 const initialState = {
@@ -30,10 +35,22 @@ export const loginUser = createAsyncThunk(
   }
 );
 
+export const clearStore = createAsyncThunk("user/clearStore", clearStoreThunk);
+
 const UserSlice = createSlice({
   name: "user",
   initialState,
-  reducers: {},
+  reducers: {
+    logoutUser: (state, { payload }) => {
+      state.user = null;
+      removeUserFromLocalStorage();
+      if (payload) {
+        toast.success(payload, {
+          position: toast.POSITION.TOP_CENTER,
+        });
+      }
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(registerUser.pending, (state) => {
@@ -84,9 +101,12 @@ const UserSlice = createSlice({
         toast.error(payload.message, {
           position: toast.POSITION.TOP_CENTER,
         });
+      })
+      .addCase(clearStore.rejected, () => {
+        toast.error("There was an error..");
       });
   },
 });
 
-export const {} = UserSlice.actions;
+export const { logoutUser } = UserSlice.actions;
 export default UserSlice.reducer;

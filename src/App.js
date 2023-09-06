@@ -8,6 +8,7 @@ import Planpage from "./pages/Planpage";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import ProtectedRoute from "./components/Common/ProtectedRoute";
+import PolotnoEditor from "./pages/PolotnoEditor";
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
           }
         />
         <Route path="/subscription" element={<Planpage />} />
+        <Route path="/polotno-editor" element={<PolotnoEditor />} />
       </Routes>
       <ToastContainer position="top-center" />
     </BrowserRouter>
