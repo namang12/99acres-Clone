@@ -73,6 +73,7 @@ const SignUpForm = ({ closeModal, switchToLogin }) => {
                       <div className="input-field">
                         <input
                           name="email"
+                          type="email"
                           className="form-control"
                           id="input3"
                           value={values.email}
@@ -105,6 +106,7 @@ const SignUpForm = ({ closeModal, switchToLogin }) => {
                         <input
                           name="contactNo"
                           className="form-control"
+                          type="number"
                           value={values.contactNo}
                           onChange={handleChange}
                           id="input5"
@@ -138,13 +140,16 @@ const SignUpForm = ({ closeModal, switchToLogin }) => {
                   </div>
                 </form>
                 <div className="member mt-1">
-                  <span>Already a member?</span>
+                  <span>Already a member? </span>
                   <span
                     className="switch-link"
                     onClick={switchToLogin}
-                    style={{ color: "blue" }}
+                    style={{
+                      color: "blue",
+                      cursor: "pointer",
+                    }}
                   >
-                    <u>Sign in here.</u>
+                    <u style={{ textDecoration: "none" }}>Sign in here.</u>
                   </span>
                 </div>
               </div>

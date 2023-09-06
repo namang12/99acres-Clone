@@ -3,7 +3,7 @@ import {
   addUserToLocalStorage,
   getUserFromLocalStorage,
 } from "../../utils/localStorage";
-import { registerUserThunk } from "./UserThunk";
+import { loginUserThunk, registerUserThunk } from "./UserThunk";
 import { toast } from "react-toastify";
 
 const initialState = {
@@ -15,7 +15,18 @@ const initialState = {
 export const registerUser = createAsyncThunk(
   "user/registerUser",
   async (user, thunkAPI) => {
-    return registerUserThunk("UserAuthentication/RegisterUser", user, thunkAPI);
+    return registerUserThunk(
+      "/UserAuthentication/RegisterUser",
+      user,
+      thunkAPI
+    );
+  }
+);
+
+export const loginUser = createAsyncThunk(
+  "user/loginUser",
+  async (user, thunkAPI) => {
+    return loginUserThunk("/UserAuthentication/LoginUser", user, thunkAPI);
   }
 );
 
@@ -29,7 +40,7 @@ const UserSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(registerUser.fulfilled, (state, { payload }) => {
-        if (payload.message === "Email already exists") {
+        if (payload.isSuccess === false) {
           state.isLoading = false;
           toast.error(payload.message, {
             position: toast.POSITION.TOP_CENTER,
@@ -43,6 +54,32 @@ const UserSlice = createSlice({
         }
       })
       .addCase(registerUser.rejected, (state, { payload }) => {
+        state.isLoading = false;
+        toast.error(payload.message, {
+          position: toast.POSITION.TOP_CENTER,
+        });
+      })
+      .addCase(loginUser.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(loginUser.fulfilled, (state, { payload }) => {
+        console.log(payload);
+        if (payload.isSuccess === false) {
+          state.isLoading = false;
+          toast.error(payload.message, {
+            position: toast.POSITION.TOP_CENTER,
+          });
+        } else {
+          const user = payload;
+          state.isLoading = false;
+          state.user = user;
+          addUserToLocalStorage(user);
+          toast.success(`Welcome Back ${user.data.userName}`, {
+            position: toast.POSITION.TOP_CENTER,
+          });
+        }
+      })
+      .addCase(loginUser.rejected, (state, { payload }) => {
         state.isLoading = false;
         toast.error(payload.message, {
           position: toast.POSITION.TOP_CENTER,
