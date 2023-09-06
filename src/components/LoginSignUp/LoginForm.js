@@ -15,61 +15,60 @@ const LoginForm = ({ closeModal, switchToSignUp }) => {
 
   return (
     <div>
-      <div class="card">
-        <div class="row">
-          <div class="col custom-widthh" style={{ width: "249px" }}>
-            {" "}
+      <div className="card">
+        <div className="row">
+          <div className="col custom-widthh" style={{ width: "249px" }}>
             {/* Updated col-md-4 to col-md-6 */}
-            <div class="h-100 d-flex justify-content-center align-items-center">
-              <div class="py-4 px-3">
+            <div className="h-100 d-flex justify-content-center align-items-center">
+              <div className="py-4 px-3">
                 <form onSubmit={handleSubmit}>
                   <h4>
                     <u>LOGIN</u>
                   </h4>
                   <div style={{ width: "20px", height: "20px" }}></div>
-                  <div class="row mt-2">
-                    <div class="col-md-12">
-                      <div class="input-field">
+                  <div className="row mt-2">
+                    <div className="col-md-12">
+                      <div className="input-field">
                         <input
-                          class="form-control"
+                          className="form-control"
                           id="input3"
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
                           required
                         />
-                        <label for="input3">Email</label>
+                        <label htmlFor="input3">Email</label>
                       </div>
                     </div>
                   </div>
-                  <div class="row mt-2 mb-2">
-                    <div class="col-md-12">
-                      <div class="input-field">
+                  <div className="row mt-2 mb-2">
+                    <div className="col-md-12">
+                      <div className="input-field">
                         <input
-                          class="form-control"
+                          className="form-control"
                           id="input4"
                           value={password}
                           onChange={(e) => setPassword(e.target.value)}
                           required
                         />
-                        <label for="input4">Password</label>
+                        <label htmlFor="input4">Password</label>
                       </div>
                     </div>
                   </div>
-                  <span class="" style={{ color: "blue" }}>
-                    Forgot password ?{" "}
+                  <span className="" style={{ color: "blue" }}>
+                    Forgot password ?
                     <span style={{ color: "white" }}>
                       kfm3;offojfoFM3;FM3;FFO43FOL4KGFO3f
-                    </span>{" "}
+                    </span>
                   </span>
-                  <div class="row mt-2">
-                    <div class="col-md-12">
-                      <button class="btn btn-primary w-100 signup-button">
+                  <div className="row mt-2">
+                    <div className="col-md-12">
+                      <button className="btn btn-primary w-100 signup-button">
                         LOGIN
                       </button>
                     </div>
                   </div>
                 </form>
-                <div class="member mt-1">
+                <div className="member mt-1">
                   <span>Don't have an account? </span>
                   <span
                     className="switch-link"
@@ -82,18 +81,17 @@ const LoginForm = ({ closeModal, switchToSignUp }) => {
               </div>
             </div>
           </div>
-          <div class="col-md-6 custom-width" style={{ width: "300px" }}>
-            {" "}
+          <div className="col-md-6 custom-width" style={{ width: "300px" }}>
             {/* New col-md-4 */}
-            <div class="right-side-content" style={{ width: "300px" }}>
+            <div className="right-side-content" style={{ width: "300px" }}>
               <div
-                class="content d-flex flex-column"
+                className="content d-flex flex-column"
                 style={{ marginTop: "-180px" }}
               >
                 <h1>99acres</h1>
                 <h6>
                   Login to your account to <br />
-                  unlock these benefits{" "}
+                  unlock these benefits
                 </h6>
                 <ul typeof="circle">
                   <li>Get latest updates about Properties and Projects.</li>
