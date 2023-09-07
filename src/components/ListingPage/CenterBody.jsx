@@ -17,22 +17,22 @@ const CenterBody = () => {
   return (
     <div className="center-body">
       <div className="container-2">
-        <div className="div-postproperty"/>
+        <div className="div-postproperty" />
         <div className="div-postproperty-3">
           {/* Center image with intro text and know more menu*/}
 
           <div className="overlap-2" ref={postRef}>
-              <p className="sell-or-rent-your">
-                <span className="span">
-                  Sell or Rent your Property
-                  <br />
-                </span>
-                <span className="text-wrapper-6">faster</span>
-                <span className="span"> with 99acres.com</span>
-              </p>
-            
+            <p className="sell-or-rent-your">
+              <span className="span">
+                Sell or Rent your Property
+                <br />
+              </span>
+              <span className="text-wrapper-6">faster</span>
+              <span className="span"> with 99acres.com</span>
+            </p>
+
             <div className="span-postproperty">
-              <div className="span-greentick"/>
+              <div className="span-greentick" />
               <div className="div-wrapper">
                 <div className="text-wrapper-7">Advertise for FREE</div>
               </div>
@@ -62,15 +62,18 @@ const CenterBody = () => {
               </div>
             </div>
 
-
             <div className="overlap-3">
               <div className="desktop-animation" />
-              <p className="div-ownerassitant">* Available with Owner Assist Plans</p>
+              <p className="div-ownerassitant">
+                * Available with Owner Assist Plans
+              </p>
             </div>
           </div>
-          
-          <div style={{width:"100%", display:"flex", justifyContent:"center",}}>
+
           <div
+            style={{ width: "100%", display: "flex", justifyContent: "center" }}
+          >
+            <div
               className="div-2"
               onClick={() => {
                 handleScroll(knowmoreRef.current);
@@ -79,15 +82,12 @@ const CenterBody = () => {
               <div className="div-wrapper-2">
                 <div className="text-wrapper-15">Know More</div>
               </div>
-              <span class="material-symbols-rounded">expand_more</span>
+              <span className="material-symbols-rounded">expand_more</span>
             </div>
-            </div>
-
-
+          </div>
 
           {/* How to Post with Begin to POst Your Property */}
           <div className="div-3" ref={knowmoreRef}>
-
             <div className="heading">
               <div className="text-wrapper-22">HOW TO POST</div>
               <p className="post-your-property">
@@ -98,7 +98,7 @@ const CenterBody = () => {
 
             <div className="div-postpropsteps">
               <div className="div-4">
-                <div className="image-2"/>
+                <div className="image-2" />
                 <div className="heading-2">
                   <p className="div-5">
                     <span className="text-wrapper-6">01. </span>
@@ -115,7 +115,6 @@ const CenterBody = () => {
                   </p>
                 </div>
               </div>
-
 
               <div className="div-4">
                 <div className="image-3" />
@@ -134,7 +133,7 @@ const CenterBody = () => {
                 </div>
               </div>
               <div className="div-4">
-                <div className="image-4"/>
+                <div className="image-4" />
                 <div className="heading-2">
                   <p className="div-5">
                     <span className="text-wrapper-6">03. </span>
@@ -163,7 +162,7 @@ const CenterBody = () => {
           </div>
 
           {/* Banner Image */}
-          
+
           <div className="div-bannerimage">
             <img
               className="banner-image"
@@ -205,14 +204,14 @@ const CenterBody = () => {
 
       {/* Additional Benefits */}
       <div className="div-additional">
-        <div style={{width:"1195px"}}>
-        <div className="text-wrapper-25-a">ADDITIONAL BENEFITS</div>
-        <div className="everything-wrapper">
-          <p className="text-wrapper-28">
-            Everything 99acres does to sell or
-            <br />
-            rent out your property faster…
-          </p>
+        <div style={{ width: "1195px" }}>
+          <div className="text-wrapper-25-a">ADDITIONAL BENEFITS</div>
+          <div className="everything-wrapper">
+            <p className="text-wrapper-28">
+              Everything 99acres does to sell or
+              <br />
+              rent out your property faster…
+            </p>
           </div>
         </div>
 
@@ -226,16 +225,16 @@ const CenterBody = () => {
               advertisement to sell or rent out a house, flat, apartment, villa,
               land, shop, office or showroom and all other types of residential
               and commercial real estate to get qualified enquiries.
-            <br/>
-            <br/>
+              <br />
+              <br />
               Whether you are an owner, builder or broker or have a property for
               sale or office spaces for rent or lease, shops for rent/lease, put
               your independent house or flat on rent, you can
               <br />
               advertise your property for free, on 99acres.com, the best real
               estate property site.
-            <br/>
-            <br/>
+              <br />
+              <br />
               99acres.com is one of the most trustworthy channels to search
               buyers and tenants online for flats, independent houses, offices,
               shops, showrooms, warehouses and factories. What
@@ -249,19 +248,19 @@ const CenterBody = () => {
           </div>
         </div>
         <div className="btn-additionalinfopost">
-        <div
-          className="button-additionalinfopost"
-          onClick={() => {
-            handleScroll(postRef.current);
-          }}
-        >
-          <p className="text-wrapper-24">Begin to Post your Property</p>
-        </div>
+          <div
+            className="button-additionalinfopost"
+            onClick={() => {
+              handleScroll(postRef.current);
+            }}
+          >
+            <p className="text-wrapper-24">Begin to Post your Property</p>
+          </div>
         </div>
       </div>
 
       <div className="faq">
-      <Faq />
+        <Faq />
       </div>
     </div>
   );

@@ -13,22 +13,22 @@ export const OwnerPlan = () => {
     <div className="owner-plan">
       <div className="text-wrapper">OWNER PLANS</div>
       <p className="heading-pick-a">Pick a plan to sell your house faster</p>
-      
+
       <div className="div-planscatalog">
-
         <div className="div-self-service">
-
           <div className="div-planscatalog-2">
             <div className="i-icons-bosd-wrapper">
-            <FontAwesomeIcon icon={faArrowTrendUp} size="lg" style={{color: "#42adff",}} />
+              <FontAwesomeIcon
+                icon={faArrowTrendUp}
+                size="lg"
+                style={{ color: "#42adff" }}
+              />
             </div>
             <div className="text-wrapper-2">Self-Service Plans</div>
           </div>
 
           <div className="div-planscatalog-3">
-
             <div className="div-product">
-
               <div className="div-d-bos">
                 <div className="class">
                   <div className="png" />
@@ -61,25 +61,21 @@ export const OwnerPlan = () => {
               </div>
 
               <div className="div-wrapper">
-
                 <div className="div-hd-bd">
-                  <div className="div-d-bos-4" style={{maxHeight:"20px"}}>
+                  <div className="div-d-bos-4" style={{ maxHeight: "20px" }}>
                     <div className="greytickx-png" />
-                      <p className="text-wrapper-9">Top ranks - 5X buyers</p>
+                    <p className="text-wrapper-9">Top ranks - 5X buyers</p>
                   </div>
                   <div className="div-d-bos-4">
                     <div className="greytickx-png" />
-                    
-                      <div className="text-wrapper-9">
-                        Premium listing design
-                     
+
+                    <div className="text-wrapper-9">Premium listing design</div>
+                  </div>
+                  <div className="div-d-bos-4">
+                    <div className="greytickx-png" />
+                    <div className="text-wrapper-9">
+                      Larger photos &amp; Slideshow
                     </div>
-                  </div>
-                  <div className="div-d-bos-4">
-                    <div className="greytickx-png" />
-                      <div className="text-wrapper-9">
-                        Larger photos &amp; Slideshow
-                      </div>
                   </div>
                 </div>
               </div>
@@ -118,38 +114,38 @@ export const OwnerPlan = () => {
                 </div>
               </div>
 
-              
               <div className="div-wrapper">
-
                 <div className="div-hd-bd">
-                  <div className="div-d-bos-4" style={{maxHeight:"20px",}}>
-                    <div className="greytickx-png"/>
-                      <p className="text-wrapper-9">
-                        All benefits of Advanced Plan
-                      </p>
-                    </div>
+                  <div className="div-d-bos-4" style={{ maxHeight: "20px" }}>
+                    <div className="greytickx-png" />
+                    <p className="text-wrapper-9">
+                      All benefits of Advanced Plan
+                    </p>
+                  </div>
                   <div className="div-d-bos-4">
                     <div className="greytickx-png" />
-                      <div className="text-wrapper-9">8X buyers</div>
-                    </div>
+                    <div className="text-wrapper-9">8X buyers</div>
+                  </div>
                   <div className="div-d-bos-4">
                     <div className="greytickx-png" />
-                      <p className="text-wrapper-9">
-                        7,500+ Google &amp; Facebook ads
-                      </p>
-                    </div>
+                    <p className="text-wrapper-9">
+                      7,500+ Google &amp; Facebook ads
+                    </p>
+                  </div>
                 </div>
-
               </div>
             </div>
           </div>
         </div>
 
         <div className="div-assisted-plans">
-
           <div className="div-planscatalog-4">
             <div className="img-wrapper">
-            <FontAwesomeIcon icon={faUser} size="lg" style={{color: "#ffc157",}} />
+              <FontAwesomeIcon
+                icon={faUser}
+                size="lg"
+                style={{ color: "#ffc157" }}
+              />
             </div>
             <div className="text-wrapper-2">Assisted Plans</div>
           </div>
@@ -158,7 +154,7 @@ export const OwnerPlan = () => {
             <div className="div-product">
               <div className="div-d-bos">
                 <div className="class">
-                  <div className="assistx-png"/>
+                  <div className="assistx-png" />
                   <div className="div-d-bos-2">
                     <div className="text-wrapper-3">ASSIST</div>
                     <div className="text-wrapper-4">with RM</div>
@@ -189,27 +185,27 @@ export const OwnerPlan = () => {
               </div>
               <div className="div-wrapper">
                 <div className="div-hd-bd">
-                  <div className="div-d-bos-4" style={{maxHeight:"20px"}}>
-                    <div className="greytickx-png"/>
-                      <p className="text-wrapper-9">
-                        All benefits of Advanced Plan
-                      </p>
-                    </div>
+                  <div className="div-d-bos-4" style={{ maxHeight: "20px" }}>
+                    <div className="greytickx-png" />
+                    <p className="text-wrapper-9">
+                      All benefits of Advanced Plan
+                    </p>
+                  </div>
                   <div className="div-d-bos-4">
-                    <div className="greytickx-png"/>
-                      <div className="text-wrapper-9">
-                        Relationship manager assistance
-                      </div>
+                    <div className="greytickx-png" />
+                    <div className="text-wrapper-9">
+                      Relationship manager assistance
                     </div>
+                  </div>
                   <div className="div-d-bos-4">
-                      <div className="greytickx-png" />
-                      <p className="text-wrapper-9">
-                        Filtered genuine buyers - Our executive
-                        <br />
-                        manages all conversations on your
-                        <br />
-                        behalf.
-                      </p>
+                    <div className="greytickx-png" />
+                    <p className="text-wrapper-9">
+                      Filtered genuine buyers - Our executive
+                      <br />
+                      manages all conversations on your
+                      <br />
+                      behalf.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -247,37 +243,35 @@ export const OwnerPlan = () => {
                   </button>
                 </div>
               </div>
-  
+
               <div className="div-wrapper">
                 <div className="div-hd-bd">
-                  <div className="div-d-bos-4" style={{maxHeight:"20px"}}>
+                  <div className="div-d-bos-4" style={{ maxHeight: "20px" }}>
                     <div className="greytickx-png" />
-                      <p className="text-wrapper-9">
-                        All benefits of Assist Plan
-                      </p>
+                    <p className="text-wrapper-9">
+                      All benefits of Assist Plan
+                    </p>
                   </div>
-                  <div className="div-d-bos-4" style={{maxHeight:"30px"}}>
-                    <div className="greytickx-png"/>
-                      <p className="text-wrapper-9">
-                        12X buyers filtered by relationship
-                        <br />
-                        manager
-                      </p>
+                  <div className="div-d-bos-4" style={{ maxHeight: "30px" }}>
+                    <div className="greytickx-png" />
+                    <p className="text-wrapper-9">
+                      12X buyers filtered by relationship
+                      <br />
+                      manager
+                    </p>
                   </div>
                   <div className="div-d-bos-4">
                     <div className="greytickx-png" />
-                      <p className="text-wrapper-9">
-                        15,000+ Google &amp; Facebook ads
-                      </p>
+                    <p className="text-wrapper-9">
+                      15,000+ Google &amp; Facebook ads
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
       </div>
-
     </div>
   );
 };

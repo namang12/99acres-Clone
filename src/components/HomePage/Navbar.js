@@ -9,12 +9,17 @@ import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import { Button, Chip } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useSnackbar } from "notistack";
+import { clearStore } from "../../redux/User/UserSlice";
 
 export default function Navbar({ openModal, isHome = true }) {
   const [anchorEl, setAnchorEl] = useState(null);
   const [scrolled, setScrolled] = useState(false);
-
+  const { user } = useSelector((store) => store.user);
   const navigate = useNavigate();
+  const { enqueueSnackbar } = useSnackbar();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,6 +43,21 @@ export default function Navbar({ openModal, isHome = true }) {
 
   const handleClose = () => {
     setAnchorEl(null);
+  };
+
+  const handlePostProperty = () => {
+    if (user) {
+      navigate("/postproperty");
+    } else {
+      openModal();
+      enqueueSnackbar("Login to post a property", {
+        variant: "warning",
+        anchorOrigin: {
+          vertical: "top",
+          horizontal: "center",
+        },
+      });
+    }
   };
 
   return (
@@ -68,7 +88,7 @@ export default function Navbar({ openModal, isHome = true }) {
           <div>
             <Button
               disableRipple
-              onClick={() => navigate("/postproperty")}
+              onClick={handlePostProperty}
               variant="contained"
               sx={{
                 textTransform: "none",
@@ -116,8 +136,8 @@ export default function Navbar({ openModal, isHome = true }) {
               id="menu-appbar"
               anchorEl={anchorEl}
               anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
+                vertical: "bottom",
+                horizontal: "center",
               }}
               keepMounted
               transformOrigin={{
@@ -127,10 +147,17 @@ export default function Navbar({ openModal, isHome = true }) {
               open={Boolean(anchorEl)}
               onClose={handleClose}
             >
-              <MenuItem onClick={openModal}>Login / Register</MenuItem>
-
-              <MenuItem onClick={handleClose}>Profile</MenuItem>
-              <MenuItem onClick={handleClose}>My account</MenuItem>
+              {!user && (
+                <MenuItem onClick={openModal}>Login / Register</MenuItem>
+              )}
+              {user && <MenuItem onClick={handleClose}>Profile</MenuItem>}
+              {user && (
+                <MenuItem
+                  onClick={() => dispatch(clearStore("Logging out..."))}
+                >
+                  Logout
+                </MenuItem>
+              )}
             </Menu>
           </div>
         </Toolbar>
