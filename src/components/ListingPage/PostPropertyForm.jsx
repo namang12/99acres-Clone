@@ -3,8 +3,15 @@ import "./PostPropertyForm.css";
 import TextField from "@mui/material/TextField";
 import axios from "axios";
 import { Button } from "@mui/material";
+import { useForm } from "react-hook-form";
 
 const PostPropertyForm = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
   const [propertyData, setPropertyData] = useState({
     propertyOption: "",
     type: "",
@@ -17,6 +24,9 @@ const PostPropertyForm = () => {
     phoneNumber: "",
     emailid: "",
   });
+
+  // const [optionError, setOptionError] = useState("")
+  // const [typeError, setTypeError] = useState("")
 
   const {
     propertyOption,
@@ -31,31 +41,42 @@ const PostPropertyForm = () => {
     emailid,
   } = propertyData;
 
+  const [base64Image, setBase64Image] = useState(null);
+
   const onInputChange = (e) => {
     setPropertyData({ ...propertyData, [e.target.name]: e.target.value });
     console.log(propertyData);
   };
 
   const handleImage = (e) => {
-    setPropertyData({ ...propertyData, image: e.target.files[0] });
+    const file = e.target.files[0];
+
+    if (file) {
+      const reader = new FileReader();
+
+      reader.onload = (event) => {
+        const base64String = event.target.result;
+        setBase64Image(base64String);
+      };
+      reader.readAsDataURL(file);
+    }
   };
 
   const onSubmit = async (e) => {
-    e.preventDefault();
     const formData = new FormData();
-    formData.append("propertyOption", propertyOption);
-    formData.append("type", type);
-    formData.append("image", image);
-    formData.append("area", area);
-    formData.append("address", address);
-    formData.append("city", city);
-    formData.append("state", state);
-    formData.append("price", price);
-    formData.append("phoneNumber", phoneNumber);
-    formData.append("emailid", emailid);
+    formData.append("PropertyOptions", propertyOption);
+    formData.append("PropertyType", type);
+    formData.append("ImageName", base64Image);
+    formData.append("PropertyArea", area);
+    formData.append("Address", address);
+    formData.append("City", city);
+    formData.append("State", state);
+    formData.append("Price", price);
+    formData.append("ContactNo", phoneNumber);
+    formData.append("Email", emailid);
     try {
       const response = await axios.post(
-        "http://localhost:5000/propertyData",
+        "https://localhost:7046/api/PostForm/PostFormEntry",
         formData,
         {
           headers: {
@@ -72,7 +93,7 @@ const PostPropertyForm = () => {
   return (
     <div className="div-postform">
       <div className="div-postproperty-6">
-        <form onSubmit={(e) => onSubmit(e)}>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <p className="text-wrapper-9">
             Start posting your property, it’s free
           </p>
@@ -81,9 +102,17 @@ const PostPropertyForm = () => {
           <div className="div-page-ppf">
             {/* Property Options Radio */}
             <div className="div-hd-d">
-              <div className="text-wrapper-11">You're looking to ...</div>
+              <div className="text-wrapper-11">
+                You're looking to...&nbsp;&nbsp;{" "}
+                {errors.propertyOption && (
+                  <span style={{ color: "red", fontSize: "12px" }}>
+                    (Required)
+                  </span>
+                )}
+              </div>
               <div className="radiobutton-postform">
                 <input
+                  {...register("propertyOption", { required: true })}
                   type="radio"
                   name="propertyOption"
                   value={"Sell"}
@@ -93,6 +122,7 @@ const PostPropertyForm = () => {
                 <label for="sell">Sell</label>
 
                 <input
+                  {...register("propertyOption", { required: true })}
                   type="radio"
                   name="propertyOption"
                   value={"Rent/Lease"}
@@ -102,6 +132,7 @@ const PostPropertyForm = () => {
                 <label for="Rent/Lease">Rent/Lease</label>
 
                 <input
+                  {...register("propertyOption", { required: true })}
                   type="radio"
                   name="propertyOption"
                   value={"PG"}
@@ -114,11 +145,31 @@ const PostPropertyForm = () => {
 
             {/* Property Type Radio */}
             <div className="div-hd-a">
-              <div className="text-wrapper-11">And it's a ...</div>
+              <div className="text-wrapper-11">
+                And it's a...&nbsp;&nbsp;{" "}
+                {errors.type && (
+                  <span style={{ color: "red", fontSize: "12px" }}>
+                    (Required)
+                  </span>
+                )}
+                {errors.image && (
+                  <span
+                    className="image-errortext"
+                    style={{
+                      fontSize: "10px",
+                      marginLeft: "50px",
+                      color: "red",
+                    }}
+                  >
+                    Image is Required(only JPG/PNG)
+                  </span>
+                )}
+              </div>
 
               <div style={{ display: "flex" }}>
                 <div className="radiobutton-postform">
                   <input
+                    {...register("type", { required: true })}
                     type="radio"
                     name="type"
                     value={"Flat"}
@@ -128,6 +179,7 @@ const PostPropertyForm = () => {
                   <label for="Flat">Flat</label>
 
                   <input
+                    {...register("type", { required: true })}
                     type="radio"
                     name="type"
                     value={"Villa"}
@@ -137,6 +189,7 @@ const PostPropertyForm = () => {
                   <label for="Villa">Villa</label>
 
                   <input
+                    {...register("type", { required: true })}
                     type="radio"
                     name="type"
                     value={"Land"}
@@ -149,7 +202,13 @@ const PostPropertyForm = () => {
                 <div className="div-uploadimage">
                   <Button variant="contained" component="label">
                     Upload Photo
-                    <input type="file" hidden onChange={handleImage} />
+                    <input
+                      {...register("image", { required: true })}
+                      type="file"
+                      accept="image/png, image/jpeg"
+                      hidden
+                      onChange={handleImage}
+                    />
                   </Button>
                 </div>
               </div>
@@ -158,22 +217,36 @@ const PostPropertyForm = () => {
             {/* Property Area */}
             <div className="div-inpfields" style={{ marginTop: "7px" }}>
               <TextField
+                {...register("area", { valueAsNumber: true, required: true })}
                 className="area-inp"
                 id="standard-basic"
+                type="number"
+                placeholder={errors.area ? "This Field is Required" : ""}
                 label="Total Area of Property is"
                 variant="standard"
                 size="small"
                 name="area"
                 value={area}
                 onChange={(e) => onInputChange(e)}
-                InputLabelProps={{
-                  style: {
-                    fontSize: "14px",
-                    fontFamily: "Helvetica",
-                    fontWeight: "600",
-                    color: "#091e42",
-                  },
-                }}
+                InputLabelProps={
+                  errors.area
+                    ? {
+                        style: {
+                          fontSize: "14px",
+                          fontFamily: "Helvetica",
+                          fontWeight: "500",
+                          color: "red",
+                        },
+                      }
+                    : {
+                        style: {
+                          fontSize: "14px",
+                          fontFamily: "Helvetica",
+                          fontWeight: "600",
+                          color: "#091e42",
+                        },
+                      }
+                }
               />
               <div className="area-unit">in Sq. Feet</div>
             </div>
@@ -181,83 +254,135 @@ const PostPropertyForm = () => {
             {/* Address */}
             <div className="div-inpfields">
               <TextField
+                {...register("address", { required: true })}
                 className="address-inp"
                 id="standard-basic"
+                placeholder={errors.address ? "This Field is Required" : ""}
                 label="Address of Property"
                 variant="standard"
                 size="medium"
                 name="address"
                 value={address}
                 onChange={(e) => onInputChange(e)}
-                InputLabelProps={{
-                  style: {
-                    fontSize: "14px",
-                    fontFamily: "Helvetica",
-                    fontWeight: "600",
-                    color: "#091e42",
-                  },
-                }}
+                InputLabelProps={
+                  errors.address
+                    ? {
+                        style: {
+                          fontSize: "14px",
+                          fontFamily: "Helvetica",
+                          fontWeight: "500",
+                          color: "red",
+                        },
+                      }
+                    : {
+                        style: {
+                          fontSize: "14px",
+                          fontFamily: "Helvetica",
+                          fontWeight: "600",
+                          color: "#091e42",
+                        },
+                      }
+                }
               />
             </div>
 
             <div className="div-inpfields">
               <TextField
+                {...register("city", { required: true })}
                 className="city-inp"
                 id="standard-basic"
+                placeholder={errors.city ? "This Field is Required" : ""}
                 label="City"
                 variant="standard"
                 size="medium"
                 name="city"
                 value={city}
                 onChange={(e) => onInputChange(e)}
-                InputLabelProps={{
-                  style: {
-                    fontSize: "14px",
-                    fontFamily: "Helvetica",
-                    fontWeight: "600",
-                    color: "#091e42",
-                  },
-                }}
+                InputLabelProps={
+                  errors.city
+                    ? {
+                        style: {
+                          fontSize: "14px",
+                          fontFamily: "Helvetica",
+                          fontWeight: "500",
+                          color: "red",
+                        },
+                      }
+                    : {
+                        style: {
+                          fontSize: "14px",
+                          fontFamily: "Helvetica",
+                          fontWeight: "600",
+                          color: "#091e42",
+                        },
+                      }
+                }
               />
               <TextField
+                {...register("state", { required: true })}
                 className="state-inp"
                 id="standard-basic"
+                placeholder={errors.state ? "This Field is Required" : ""}
                 label="State"
                 variant="standard"
                 size="medium"
                 name="state"
                 value={state}
                 onChange={(e) => onInputChange(e)}
-                InputLabelProps={{
-                  style: {
-                    fontSize: "14px",
-                    fontFamily: "Helvetica",
-                    fontWeight: "600",
-                    color: "#091e42",
-                  },
-                }}
+                InputLabelProps={
+                  errors.state
+                    ? {
+                        style: {
+                          fontSize: "14px",
+                          fontFamily: "Helvetica",
+                          fontWeight: "500",
+                          color: "red",
+                        },
+                      }
+                    : {
+                        style: {
+                          fontSize: "14px",
+                          fontFamily: "Helvetica",
+                          fontWeight: "600",
+                          color: "#091e42",
+                        },
+                      }
+                }
               />
             </div>
 
             {/* Price */}
             <div className="div-inpfields">
               <TextField
+                {...register("price", { required: true })}
                 className="price-inp"
                 id="standard-basic"
+                placeholder={errors.price ? "This Field is Required" : ""}
                 label="Price of the Property"
                 variant="standard"
                 size="medium"
                 name="price"
                 value={price}
                 onChange={(e) => onInputChange(e)}
-                InputLabelProps={{
-                  style: {
-                    fontSize: "14px",
-                    fontFamily: "Helvetica",
-                    fontWeight: "600",
-                    color: "#091e42",
-                  },
-                }}
+                InputLabelProps={
+                  errors.price
+                    ? {
+                        style: {
+                          fontSize: "14px",
+                          fontFamily: "Helvetica",
+                          fontWeight: "500",
+                          color: "red",
+                        },
+                      }
+                    : {
+                        style: {
+                          fontSize: "14px",
+                          fontFamily: "Helvetica",
+                          fontWeight: "600",
+                          color: "#091e42",
+                        },
+                      }
+                }
               />
               <div className="price-unit">in INR</div>
             </div>
@@ -270,23 +395,67 @@ const PostPropertyForm = () => {
 
               <div className="contact-wrapper">
                 <TextField
+                  {...register("phoneNumber", {
+                    valueAsNumber: true,
+                    required: true,
+                    maxLength: 10,
+                    minLength: 10,
+                  })}
                   className="phone-inp"
                   id="outlined-basic"
+                  type="number"
+                  placeholder={
+                    errors.phoneNumber ? "Please enter a Valid 10 Digit Phone Number" : ""
+                  }
                   label="Phone Number"
                   variant="outlined"
                   name="phoneNumber"
                   value={phoneNumber}
                   onChange={(e) => onInputChange(e)}
-                  sx={{ borderColor: "#ebecf0" }}
+                  InputLabelProps={
+                    errors.phoneNumber
+                      ? {
+                          style: {
+                            fontSize: "14px",
+                            fontFamily: "Helvetica",
+                            fontWeight: "500",
+                            color: "red",
+                          },
+                        }
+                      : {
+                          style: {
+                            color: "#091e42",
+                          },
+                        }
+                  }
                 />
                 <TextField
+                  {...register("emailid", { required: true })}
                   className="email-inp"
                   id="outlined-basic"
+                  type="email"
+                  placeholder={errors.emailid ? "This Field is Required" : ""}
                   label="Email ID"
                   variant="outlined"
                   name="emailid"
                   value={emailid}
                   onChange={(e) => onInputChange(e)}
+                  InputLabelProps={
+                    errors.emailid
+                      ? {
+                          style: {
+                            fontSize: "14px",
+                            fontFamily: "Helvetica",
+                            fontWeight: "500",
+                            color: "red",
+                          },
+                        }
+                      : {
+                          style: {
+                            color: "#091e42",
+                          },
+                        }
+                  }
                 />
 
                 <Button
