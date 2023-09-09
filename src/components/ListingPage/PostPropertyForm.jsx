@@ -17,6 +17,7 @@ const PostPropertyForm = () => {
     propertyOption: "",
     type: "",
     area: "",
+    propertyName: "",
     address: "",
     city: "",
     state: "",
@@ -25,20 +26,11 @@ const PostPropertyForm = () => {
     emailid: "",
   });
 
-  // const [user, setUser] = useState(null);
-  // useEffect(() => {
-  //   const userFromLocalStorage = localStorage.getItem("user", JSON.stringify(user));
-  //   // const tokenFromLocalStorage = userFromLocalStorage.userToken.jwtToken;
-
-  //   if (userFromLocalStorage) {
-  //     setUser(userFromLocalStorage);
-  //   }
-  // }, []);
-
   const {
     propertyOption,
     type,
     area,
+    propertyName,
     address,
     city,
     state,
@@ -73,6 +65,7 @@ const PostPropertyForm = () => {
     formData.append("PropertyOptions", propertyOption);
     formData.append("PropertyType", type);
     formData.append("PropertyArea", area);
+    formData.append("PropertyName", propertyName);
     formData.append("Address", address);
     formData.append("City", city);
     formData.append("State", state);
@@ -245,6 +238,30 @@ const PostPropertyForm = () => {
                 }}
               />
               <div className="area-unit">in Sq. Feet</div>
+            </div>
+
+            {/* Name of Property */}
+            <div className="div-inpfields">
+              <TextField
+                {...register("propertyName", { required: true })}
+                className="address-inp"
+                id="standard-basic"
+                placeholder={errors.propertyName ? "This Field is Required" : ""}
+                label="Name of Property"
+                variant="standard"
+                size="medium"
+                name="propertyName"
+                value={propertyName}
+                onChange={(e) => onInputChange(e)}
+                InputLabelProps={{
+                  style: {
+                    fontSize: "14px",
+                    fontFamily: "Helvetica",
+                    fontWeight: errors.propertyName ? "500" : "600",
+                    color: errors.propertyName ? "red" : "#091e42",
+                  },
+                }}
+              />
             </div>
 
             {/* Address */}

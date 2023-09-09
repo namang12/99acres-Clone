@@ -9,6 +9,8 @@ import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import ProtectedRoute from "./components/Common/ProtectedRoute";
 import PolotnoEditor from "./pages/PolotnoEditor";
+import ForgotPassword from "./pages/ForgetPassword";
+import ChangePassword from "./pages/ChangePassword";
 
 function App() {
   return (
@@ -40,6 +42,8 @@ function App() {
           }
         />
         <Route path="/subscription" element={<Planpage />} />
+        <Route path="/forgotpassword" element={<ForgotPassword/>} />
+        <Route path="/changepassword" element={<ChangePassword/>} />
         <Route path="/polotno-editor" element={<PolotnoEditor />} />
       </Routes>
       <ToastContainer position="top-center" />
