@@ -6,10 +6,16 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { handleSearchOption } from "../../redux/SearchBox/SearchSlice";
+import {
+  handleSearchCity,
+  handleSearchOption,
+  searchSuggestions,
+} from "../../redux/SearchBox/SearchSlice";
 import SearchIcon from "@mui/icons-material/Search";
+import Autocomplete, { createFilterOptions } from "@mui/material/Autocomplete";
+const filter = createFilterOptions();
 
 const optionButtons = [
   "Buy",
@@ -22,8 +28,17 @@ const optionButtons = [
 ];
 
 const SearchBox = () => {
-  const { searchOption } = useSelector((store) => store.search);
+  const [value, setValue] = React.useState("");
+  const { searchOption, city, suggestions } = useSelector(
+    (store) => store.search
+  );
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (value !== "") {
+      dispatch(searchSuggestions(value));
+    }
+  }, [value]);
 
   return (
     <Paper
@@ -92,14 +107,55 @@ const SearchBox = () => {
           flexItem
           sx={{ background: "rgba(0,0,0,0.08)", ml: 2 }}
         />
-        <TextField
-          variant="standard"
-          sx={{ ml: 2, width: "70%", fontFamily: "Open Sans" }}
-          placeholder={'"search Noida"'}
-          InputProps={{
-            startAdornment: <SearchIcon sx={{ mr: 2 }} />,
-            disableUnderline: true,
+        <Autocomplete
+          value={city}
+          onChange={(event, newValue) => dispatch(handleSearchCity(newValue))}
+          filterOptions={(options, params) => {
+            const filtered = filter(options, params);
+
+            const { inputValue } = params;
+            const isExisting = options.some(
+              (option) => inputValue === option.address
+            );
+            if (inputValue !== "" && !isExisting) {
+              filtered.push({
+                inputValue,
+                title: `Add "${inputValue}"`,
+              });
+            }
+
+            return filtered;
           }}
+          selectOnFocus
+          clearOnBlur
+          handleHomeEndKeys
+          id="free-solo-with-text-demo"
+          options={suggestions}
+          getOptionLabel={(option) => {
+            if (typeof option === "string") {
+              return option;
+            }
+            if (option.inputValue) {
+              return option.inputValue;
+            }
+            return option.address;
+          }}
+          renderOption={(props, option) => (
+            <li key={option.address} {...props}>
+              {option.address}
+            </li>
+          )}
+          sx={{ width: "70%" }}
+          freeSolo
+          renderInput={(params) => (
+            <TextField
+              {...params}
+              onChange={(e) => setValue(e.target.value)}
+              variant="standard"
+              sx={{ ml: 2, width: "95%", fontFamily: "Open Sans" }}
+              placeholder={'"search Noida"'}
+            />
+          )}
         />
         <Box sx={{ p: "16px" }}>
           <Button
