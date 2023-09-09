@@ -1,14 +1,26 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { searchSuggestionsThunk } from "./SearchThunk";
+import { toast } from "react-toastify";
 
 const initialState = {
   expanded: ["panel1", "panel2", "panel3", "panel4"],
+  city: "",
   searchOption: "Buy",
   budgetRange: [0, 200000],
   noOfBedrooms: [],
   propertyType: [],
   area: [0, 4000],
   withPhotos: false,
+  isSuggestionsLoading: false,
+  suggestions: [],
 };
+
+export const searchSuggestions = createAsyncThunk(
+  "search/searchSuggestions",
+  async (city, thunkAPI) => {
+    return searchSuggestionsThunk("/Search", city, thunkAPI);
+  }
+);
 
 const SearchSlice = createSlice({
   name: "search",
@@ -51,6 +63,45 @@ const SearchSlice = createSlice({
       state.withPhotos = !state.withPhotos;
     },
     clearSearchState: (state) => initialState,
+    handleSearchCity: (state, { payload }) => {
+      if (typeof payload === "string") {
+        return {
+          ...state,
+          city: { title: payload },
+        };
+      } else if (payload && payload.inputValue) {
+        return {
+          ...state,
+          city: { title: payload.inputValue },
+        };
+      } else {
+        return { ...state, city: payload };
+      }
+    },
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(searchSuggestions.pending, (state) => {
+        state.isSuggestionsLoading = true;
+      })
+      .addCase(searchSuggestions.fulfilled, (state, { payload }) => {
+        state.isSuggestionsLoading = false;
+        const suggestMap = new Map();
+        for (let item of payload) {
+          suggestMap.set(item.address, item.address);
+          suggestMap.set(item.city, item.city);
+          suggestMap.set(item.state, item.state);
+        }
+        state.suggestions = Array.from(suggestMap.values()).map((address) => ({
+          address,
+        }));
+      })
+      .addCase(searchSuggestions.rejected, (state, { payload }) => {
+        state.isSuggestionsLoading = false;
+        toast.error(payload.message, {
+          position: toast.POSITION.TOP_CENTER,
+        });
+      });
   },
 });
 
@@ -63,5 +114,6 @@ export const {
   handleWithPhotos,
   handleChange,
   clearSearchState,
+  handleSearchCity,
 } = SearchSlice.actions;
 export default SearchSlice.reducer;
