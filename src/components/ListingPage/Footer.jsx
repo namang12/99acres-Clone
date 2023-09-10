@@ -5,6 +5,7 @@ import { faFacebookF } from "@fortawesome/free-brands-svg-icons";
 import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -26,8 +27,12 @@ const Footer = () => {
 
           <div className="list">
             <div className="text-wrapper-46">Company</div>
+            <Link to="/aboutus">
             <div className="text-wrapper-48">About us</div>
+            </Link>
+            <Link to="/contactus">
             <div className="text-wrapper-48">Contact us</div>
+            </Link>
             <div className="text-wrapper-48">Careers with us</div>
             <div className="text-wrapper-48">Terms & Conditions</div>
             <div className="text-wrapper-48">Request Info</div>

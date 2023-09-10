@@ -5,6 +5,8 @@ import axios from "axios";
 import { Button } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { getUserFromLocalStorage } from "../../utils/localStorage";
+import { useNavigate } from "react-router-dom";
+import { useSnackbar } from "notistack";
 
 const PostPropertyForm = () => {
   const {
@@ -12,6 +14,8 @@ const PostPropertyForm = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+
+  const navigate = useNavigate();
 
   const [propertyData, setPropertyData] = useState({
     propertyOption: "",
@@ -40,6 +44,7 @@ const PostPropertyForm = () => {
   } = propertyData;
 
   const [base64Image, setBase64Image] = useState(null);
+  const { enqueueSnackbar } = useSnackbar();
 
   const onInputChange = (e) => {
     setPropertyData({ ...propertyData, [e.target.name]: e.target.value });
@@ -84,7 +89,18 @@ const PostPropertyForm = () => {
             "Content-Type": "multipart/form-data",
           },
         }
-      );
+      )
+      .then((res) => {
+        console.log(res);
+        enqueueSnackbar("Your Property Has been Successfully Posted", {
+          variant: "success",
+          anchorOrigin: {
+            vertical: "bottom",
+            horizontal: "right",
+          },
+        });
+        navigate("/");
+      })
       console.log(response.data);
     } catch (error) {
       console.error(error);

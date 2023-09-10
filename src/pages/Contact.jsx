@@ -2,16 +2,21 @@ import React from 'react'
 import './contacts.css'
 import { Navbar } from '../components/HomePage'
 import Footer from '../components/ListingPage/Footer'
+import GoToTop from "../components/PlanPage/GoToTop"
+
+
 const Contact = () => {
+
   return (
     <div>
+        <GoToTop/>
       <header className="header">
               <Navbar/>
             </header>
         <center><img src = "https://i.ibb.co/TLNV2kJ/snip.png" style={{
 
     marginTop: "100px",
-    height: "150px", width:"600px"}}/> </center>
+    height: "150px", width:"600px"}} alt='aboutus'/> </center>
 
 
 <div class="box-wrap">
@@ -110,7 +115,7 @@ const Contact = () => {
 
     
     height: "250px", width:"800px",
-    marginBottom:"100px" ,  padding: "10px",border: "1px solid black"}}/> </center>
+    marginBottom:"100px" ,  padding: "10px",border: "1px solid black"}} alt="awards"/> </center>
 
 
             <div className="div-footer-wrapper">
