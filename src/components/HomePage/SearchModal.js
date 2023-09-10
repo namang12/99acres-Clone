@@ -6,9 +6,15 @@ import Fade from "@mui/material/Fade";
 import Typography from "@mui/material/Typography";
 import { useDispatch, useSelector } from "react-redux";
 import { closeSearchModal } from "../../redux/SearchModal/SearchModalSlice";
-import { handleSearchOption } from "../../redux/SearchBox/SearchSlice";
+import {
+  handleSearchCity,
+  handleSearchOption,
+  searchSuggestions,
+} from "../../redux/SearchBox/SearchSlice";
 import { Button, Divider, TextField } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
+import Autocomplete, { createFilterOptions } from "@mui/material/Autocomplete";
+import { useNavigate } from "react-router-dom";
+const filter = createFilterOptions();
 
 const style = {
   position: "absolute",
@@ -25,10 +31,20 @@ const style = {
 const optionButtons = ["Buy", "Rent / Lease", "Plots/Land", "PG / Co-living"];
 
 export default function SearchModal() {
+  const [value, setValue] = React.useState("");
   const { open } = useSelector((store) => store.searchModal);
   const dispatch = useDispatch();
   const handleClose = () => dispatch(closeSearchModal());
-  const { searchOption } = useSelector((store) => store.search);
+  const { searchOption, city, suggestions } = useSelector(
+    (store) => store.search
+  );
+  const navigate = useNavigate();
+
+  React.useEffect(() => {
+    if (value !== "") {
+      dispatch(searchSuggestions(value));
+    }
+  }, [value]);
 
   return (
     <div>
@@ -110,7 +126,7 @@ export default function SearchModal() {
                 orientation="vertical"
                 sx={{ background: "rgba(0,0,0,0.08)", ml: 2 }}
               />
-              <TextField
+              {/* <TextField
                 variant="standard"
                 sx={{ ml: 2, width: "70%", fontFamily: "Open Sans" }}
                 placeholder={'"search Noida"'}
@@ -118,6 +134,58 @@ export default function SearchModal() {
                   startAdornment: <SearchIcon sx={{ mr: 2 }} />,
                   disableUnderline: true,
                 }}
+              /> */}
+              <Autocomplete
+                value={city}
+                onChange={(event, newValue) =>
+                  dispatch(handleSearchCity(newValue))
+                }
+                filterOptions={(options, params) => {
+                  const filtered = filter(options, params);
+
+                  const { inputValue } = params;
+                  const isExisting = options.some(
+                    (option) => inputValue === option.address
+                  );
+                  if (inputValue !== "" && !isExisting) {
+                    filtered.push({
+                      inputValue,
+                      title: `Add "${inputValue}"`,
+                    });
+                  }
+
+                  return filtered;
+                }}
+                selectOnFocus
+                clearOnBlur
+                handleHomeEndKeys
+                id="free-solo-with-text-demo"
+                options={suggestions}
+                getOptionLabel={(option) => {
+                  if (typeof option === "string") {
+                    return option;
+                  }
+                  if (option.inputValue) {
+                    return option.inputValue;
+                  }
+                  return option.address;
+                }}
+                renderOption={(props, option) => (
+                  <li key={option.address} {...props}>
+                    {option.address}
+                  </li>
+                )}
+                sx={{ width: "70%" }}
+                freeSolo
+                renderInput={(params) => (
+                  <TextField
+                    {...params}
+                    onChange={(e) => setValue(e.target.value)}
+                    variant="standard"
+                    sx={{ ml: 2, width: "95%", fontFamily: "Open Sans" }}
+                    placeholder={'"search Noida"'}
+                  />
+                )}
               />
               <Divider
                 orientation="vertical"
@@ -125,6 +193,7 @@ export default function SearchModal() {
               />
               <Box sx={{ p: "16px" }}>
                 <Button
+                  onClick={() => navigate("/properties")}
                   variant="contained"
                   sx={{
                     textTransform: "capitalize",

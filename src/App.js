@@ -11,6 +11,8 @@ import ProtectedRoute from "./components/Common/ProtectedRoute";
 import PolotnoEditor from "./pages/PolotnoEditor";
 import ForgotPassword from "./pages/ForgetPassword";
 import ChangePassword from "./pages/ChangePassword";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
@@ -34,7 +36,7 @@ function App() {
           }
         />
         <Route
-          path="/singlep"
+          path="/properties/:id"
           element={
             <ProtectedRoute>
               <SingleP />
@@ -45,6 +47,8 @@ function App() {
         <Route path="/forgotpassword" element={<ForgotPassword/>} />
         <Route path="/changepassword" element={<ChangePassword/>} />
         <Route path="/polotno-editor" element={<PolotnoEditor />} />
+        <Route path="/aboutus" element={<About/>} />
+        <Route path="/contactus" element={<Contact/>} />
       </Routes>
       <ToastContainer position="top-center" />
     </BrowserRouter>

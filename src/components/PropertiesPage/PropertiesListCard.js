@@ -1,13 +1,34 @@
 import React, { useState } from "react";
 import { Box, Button, Divider, Paper, Typography } from "@mui/material";
 import ContactModal from "./ContactModal";
+import { useNavigate } from "react-router-dom";
 
-const PropertiesListCard = () => {
+const PropertiesListCard = ({ property }) => {
   const [open, setOpen] = useState(false);
+  const {
+    address,
+    city,
+    price,
+    propertyArea,
+    propertyName,
+    imageProperty,
+    propertyId,
+    contactNo,
+    email,
+  } = property;
+  const navigate = useNavigate();
 
   return (
     <>
-      <ContactModal open={open} setOpen={setOpen} />
+      <ContactModal
+        open={open}
+        setOpen={setOpen}
+        contactNo={contactNo}
+        email={email}
+        propertyName={propertyName}
+        price={price}
+        propertyArea={propertyArea}
+      />
       <Paper
         elevation={1}
         sx={{
@@ -18,7 +39,11 @@ const PropertiesListCard = () => {
         }}
       >
         <img
-          src="assets/propertyTempImage.jpg"
+          src={
+            imageProperty === "home"
+              ? "assets/propertyTempImage.jpg"
+              : imageProperty
+          }
           alt="propertyTemp"
           style={{
             borderRadius: 8,
@@ -44,15 +69,18 @@ const PropertiesListCard = () => {
         >
           <Box>
             <Typography
+              onClick={() => navigate(`/properties/${propertyId}`)}
               sx={{
                 fontFamily: "Open Sans",
                 fontSize: "14px",
                 lineHeight: "20px",
+                cursor: "pointer",
               }}
             >
-              3 BHK Serviced Apartment for rent in Sector 48 Gurgaon
+              3 BHK Serviced Apartment for rent in {address}, {city}
             </Typography>
             <Typography
+              onClick={() => navigate(`/properties/${propertyId}`)}
               sx={{
                 fontFamily: "Open Sans",
                 fontSize: "14px",
@@ -60,11 +88,15 @@ const PropertiesListCard = () => {
                 fontWeight: 700,
                 mt: 1,
                 color: "#091E42",
+                cursor: "pointer",
               }}
             >
-              Central Park 2 The Resorts
+              {propertyName}
             </Typography>
-            <Box sx={{ mt: 1, display: "flex", gap: 8 }}>
+            <Box
+              onClick={() => navigate(`/properties/${propertyId}`)}
+              sx={{ mt: 1, display: "flex", gap: 8, cursor: "pointer" }}
+            >
               <Box>
                 <Box sx={{ display: "flex", alignItems: "baseline" }}>
                   <Typography
@@ -76,7 +108,12 @@ const PropertiesListCard = () => {
                       color: "#091E42",
                     }}
                   >
-                    ₹1.8 L
+                    ₹
+                    {price >= 1000000
+                      ? (price / 1000000).toFixed(1) + "L"
+                      : price >= 1000
+                      ? (price / 1000).toFixed(1) + "K"
+                      : price.toString()}
                   </Typography>
                   <Typography
                     sx={{
@@ -114,7 +151,7 @@ const PropertiesListCard = () => {
                       color: "#091E42",
                     }}
                   >
-                    2464
+                    {propertyArea}
                   </Typography>
                   <Typography
                     sx={{

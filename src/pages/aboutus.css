@@ -1,0 +1,736 @@
+.index {
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* width: 100%; */
+  }
+  
+  .index .div {
+    border: 1px none;
+    height: 1400px;
+    position: relative;
+    width: 1000px;
+  }
+  
+  .index .overlap {
+    height: 1268px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1000px;
+  }
+  
+  .index .link-home-wrapper {
+    height: 22px;
+    left: 0;
+    position: absolute;
+    top: 98px;
+    width: 1000px;
+  }
+  
+  .index .link-home {
+    color: #42526e;
+    font-family: "Open Sans", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    height: 19px;
+    left: 442px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 1px;
+  }
+  
+  .index .text-wrapper {
+    color: #42526e;
+    font-family: "Open Sans", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .index .image {
+    height: 1069px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1000px;
+  }
+  
+  .index .div-css-wrapper {
+    height: 1124px;
+    left: 0;
+    position: absolute;
+    top: 144px;
+    width: 1000px;
+  }
+  
+  .index .div-css {
+    height: 1124px;
+    left: 0px;
+    position: relative;
+    width: 1000px;
+  }
+  
+  .index .div-css-dbjcn {
+    background-color: #f0f9ff;
+    height: 173px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1000px;
+  }
+  
+  .index .div-css-2 {
+    height: 123px;
+    position: relative;
+    top: 50px;
+  }
+  
+  .index .heading-margin {
+    height: 67px;
+    left: 464px;
+    position: absolute;
+    top: 56px;
+    width: 110px;
+  }
+  
+  .index .heading-about-us {
+    color: #041533;
+    font-family: "Open Sans", Helvetica;
+    font-size: 24px;
+    font-weight: 700;
+    height: 32px;
+    left: 0;
+    letter-spacing: 0;
+    line-height: 32px;
+    position: absolute;
+    top: -1px;
+    white-space: nowrap;
+  }
+  
+  .index .span {
+    color: #041533;
+    font-family: "Open Sans", Helvetica;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 32px;
+  }
+  
+  .index .div-css-3 {
+    background-image: url(https://cdn.animaapp.com/projects/64fc3c2a75da8a3f301984c2/releases/64fc3c4fd9fe5940dd7aef7c/img/div-css-1dbjc4n-1@2x.png);
+    background-size: 100% 100%;
+    height: 37px;
+    left: 492px;
+    position: absolute;
+    top: 0;
+    width: 52px;
+  }
+  
+  .index .div-css-4 {
+    border-radius: 20px;
+    height: 951px;
+    left: 0;
+    position: absolute;
+    top: 173px;
+    width: 1037px;
+  }
+  
+  .index .div-css-oao-wrapper {
+    height: 146px;
+    left: 20px;
+    position: absolute;
+    top: 0;
+    width: 1000px;
+  }
+  
+  .index .div-css-oao {
+    height: 100px;
+    position: relative;
+    top: 46px;
+  }
+  
+  .index .span-wrapper {
+    color: #253858;
+    font-family: "Open Sans", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    height: 100px;
+    left: 0;
+    letter-spacing: 0;
+    line-height: 25px;
+    position: absolute;
+    top: -1px;
+  }
+  
+  .index .text-wrapper-2 {
+    color: #253858;
+    font-family: "Open Sans", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 25px;
+  }
+  
+  .index .div-css-5 {
+    height: 190px;
+    left: 20px;
+    position: absolute;
+    top: 186px;
+    width: 1000px;
+  }
+  
+  .index .heading {
+    height: 32px;
+    left: 0;
+    position: absolute;
+    top: -1px;
+    width: 1000px;
+  }
+  
+  .index .why-com {
+    color: #041533;
+    font-family: "Open Sans", Helvetica;
+    font-size: 20px;
+    font-weight: 600;
+    height: 32px;
+    left: 0;
+    letter-spacing: 0;
+    line-height: 32px;
+    position: absolute;
+    top: -1px;
+    white-space: nowrap;
+  }
+  
+  .index .text-wrapper-3 {
+    color: #041533;
+    font-family: "Open Sans", Helvetica;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 32px;
+  }
+  
+  .index .div-css-6 {
+    height: 108px;
+    left: 0;
+    position: absolute;
+    top: 32px;
+    width: 1000px;
+  }
+  
+  .index .at-present-wrapper {
+    height: 100px;
+    position: relative;
+    top: 8px;
+  }
+  
+  .index .with-the-ever-wrapper {
+    height: 50px;
+    left: 0;
+    position: absolute;
+    top: 140px;
+    width: 1000px;
+  }
+  
+  .index .with-the-ever {
+    color: #253858;
+    font-family: "Open Sans", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    height: 50px;
+    left: 0;
+    letter-spacing: 0;
+    line-height: 25px;
+    position: absolute;
+    top: -1px;
+  }
+  
+  .index .div-css-dbjcn-wrapper {
+    height: 110px;
+    left: 20px;
+    position: absolute;
+    top: 416px;
+    width: 1000px;
+  }
+  
+  .index .div-css-7 {
+    background-color: #f0f9ff;
+    border-radius: 10px;
+    height: 90px;
+    position: relative;
+  }
+  
+  .index .awards-recognitions-wrapper {
+    height: 28px;
+    left: 82px;
+    position: absolute;
+    top: 30px;
+    width: 903px;
+  }
+  
+  .index .awards-recognitions {
+    color: #041533;
+    font-family: "Open Sans", Helvetica;
+    font-size: 20px;
+    font-weight: 600;
+    height: 28px;
+    left: 0;
+    letter-spacing: 0;
+    line-height: 28px;
+    position: absolute;
+    top: -1px;
+    white-space: nowrap;
+  }
+  
+  .index .text-wrapper-4 {
+    color: #041533;
+    font-family: "Open Sans", Helvetica;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 28px;
+  }
+  
+  .index .div-css-8 {
+    background-image: url(https://cdn.animaapp.com/projects/64fc3c2a75da8a3f301984c2/releases/64fc3c4fd9fe5940dd7aef7c/img/div-css-1dbjc4n-2@2x.png);
+    background-size: 100% 100%;
+    height: 60px;
+    left: 15px;
+    position: absolute;
+    top: 15px;
+    width: 47px;
+  }
+  
+  .index .div-css-9 {
+    height: 250px;
+    left: 20px;
+    position: absolute;
+    top: 526px;
+    width: 1000px;
+  }
+  
+  .index .overlap-group-wrapper {
+    height: 25px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1000px;
+  }
+  
+  .index .overlap-group {
+    height: 25px;
+    position: relative;
+    width: 306px;
+  }
+  
+  .index .div-wrapper {
+    height: 25px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 5px;
+  }
+  
+  .index .p {
+    color: #253858;
+    font-family: "Open Sans", Helvetica;
+    font-size: 12px;
+    font-weight: 400;
+    height: 25px;
+    left: 0;
+    letter-spacing: 0;
+    line-height: 25px;
+    position: absolute;
+    top: -1px;
+    white-space: nowrap;
+  }
+  
+  .index .text-wrapper-5 {
+    color: #253858;
+    font-family: "Open Sans", Helvetica;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 25px;
+  }
+  
+  .index .proptech-mobile-app-wrapper {
+    height: 25px;
+    left: 5px;
+    position: absolute;
+    top: 0;
+    width: 301px;
+  }
+  
+  .index .span-wrapper-2 {
+    color: #253858;
+    font-family: "Open Sans", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    height: 25px;
+    left: 5px;
+    letter-spacing: 0;
+    line-height: 25px;
+    position: absolute;
+    top: -1px;
+    white-space: nowrap;
+  }
+  
+  .index .overlap-wrapper {
+    height: 25px;
+    left: 0;
+    position: absolute;
+    top: 25px;
+    width: 1000px;
+  }
+  
+  .index .overlap-2 {
+    height: 25px;
+    position: relative;
+    width: 394px;
+  }
+  
+  .index .element-com-won-the-wrapper {
+    height: 25px;
+    left: 5px;
+    position: absolute;
+    top: 0;
+    width: 389px;
+  }
+  
+  .index .div-css-10 {
+    height: 25px;
+    left: 0;
+    position: absolute;
+    top: 50px;
+    width: 1000px;
+  }
+  
+  .index .overlap-3 {
+    height: 25px;
+    position: relative;
+    width: 216px;
+  }
+  
+  .index .best-mobile-appies-wrapper {
+    height: 25px;
+    left: 5px;
+    position: absolute;
+    top: 0;
+    width: 211px;
+  }
+  
+  .index .div-css-11 {
+    height: 25px;
+    left: 0;
+    position: absolute;
+    top: 75px;
+    width: 1000px;
+  }
+  
+  .index .overlap-4 {
+    height: 25px;
+    position: relative;
+    width: 651px;
+  }
+  
+  .index .element-acres-com-won-the-wrapper {
+    height: 25px;
+    left: 5px;
+    position: absolute;
+    top: 0;
+    width: 646px;
+  }
+  
+  .index .div-css-12 {
+    height: 25px;
+    left: 0;
+    position: absolute;
+    top: 100px;
+    width: 1000px;
+  }
+  
+  .index .overlap-5 {
+    height: 25px;
+    position: relative;
+    width: 164px;
+  }
+  
+  .index .CMO-ASIA-awards-wrapper {
+    height: 25px;
+    left: 5px;
+    position: absolute;
+    top: 0;
+    width: 159px;
+  }
+  
+  .index .div-css-13 {
+    height: 25px;
+    left: 0;
+    position: absolute;
+    top: 125px;
+    width: 1000px;
+  }
+  
+  .index .overlap-6 {
+    height: 25px;
+    position: relative;
+    width: 972px;
+  }
+  
+  .index .element-com-was-wrapper {
+    height: 25px;
+    left: 5px;
+    position: absolute;
+    top: 0;
+    width: 967px;
+  }
+  
+  .index .div-css-14 {
+    height: 25px;
+    left: 0;
+    position: absolute;
+    top: 150px;
+    width: 1000px;
+  }
+  
+  .index .overlap-7 {
+    height: 25px;
+    position: relative;
+    width: 120px;
+  }
+  
+  .index .BCI-awards-wrapper {
+    height: 25px;
+    left: 5px;
+    position: absolute;
+    top: 0;
+    width: 115px;
+  }
+  
+  .index .div-css-15 {
+    height: 25px;
+    left: 0;
+    position: absolute;
+    top: 175px;
+    width: 1000px;
+  }
+  
+  .index .overlap-8 {
+    height: 25px;
+    position: relative;
+    width: 450px;
+  }
+  
+  .index .element-acres-com-was-wrapper {
+    height: 25px;
+    left: 5px;
+    position: absolute;
+    top: 0;
+    width: 445px;
+  }
+  
+  .index .div-css-16 {
+    height: 25px;
+    left: 0;
+    position: absolute;
+    top: 200px;
+    width: 1000px;
+  }
+  
+  .index .overlap-9 {
+    height: 25px;
+    position: relative;
+    width: 248px;
+  }
+  
+  .index .accommodation-times-wrapper {
+    height: 25px;
+    left: 5px;
+    position: absolute;
+    top: 0;
+    width: 243px;
+  }
+  
+  .index .div-css-17 {
+    height: 25px;
+    left: 0;
+    position: absolute;
+    top: 225px;
+    width: 1000px;
+  }
+  
+  .index .overlap-10 {
+    height: 25px;
+    position: relative;
+    width: 646px;
+  }
+  
+  .index .div-css-18 {
+    height: 25px;
+    left: 5px;
+    position: absolute;
+    top: 0;
+    width: 641px;
+  }
+  
+  .index .div-css-19 {
+    height: 105px;
+    left: 20px;
+    position: absolute;
+    top: 776px;
+    width: 1000px;
+  }
+  
+  .index .div-css-20 {
+    height: 65px;
+    position: relative;
+    top: 40px;
+  }
+  
+  .index .connect-with-us-wrapper {
+    height: 19px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1000px;
+  }
+  
+  .index .connect-with-us {
+    color: #8993a4;
+    font-family: "Open Sans", Helvetica;
+    font-size: 14px;
+    font-weight: 600;
+    height: 19px;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: -1px;
+  }
+  
+  .index .text-wrapper-6 {
+    color: #8993a4;
+    font-family: "Open Sans", Helvetica;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .index .div-css-21 {
+    height: 36px;
+    left: 0;
+    position: absolute;
+    top: 29px;
+    width: 1000px;
+  }
+  
+  .index .div-css-22 {
+    height: 36px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 48px;
+  }
+  
+  .index .div-css-23 {
+    background-image: url(https://cdn.animaapp.com/projects/64fc3c2a75da8a3f301984c2/releases/64fc3c4fd9fe5940dd7aef7c/img/div-css-1dbjc4n-3@2x.png);
+    background-size: 100% 100%;
+    border-radius: 2px;
+    height: 36px;
+    width: 36px;
+  }
+  
+  .index .div-css-24 {
+    height: 36px;
+    left: 48px;
+    position: absolute;
+    top: 0;
+    width: 48px;
+  }
+  
+  .index .div-css-25 {
+    background-image: url(https://cdn.animaapp.com/projects/64fc3c2a75da8a3f301984c2/releases/64fc3c4fd9fe5940dd7aef7c/img/div-css-1dbjc4n-4@2x.png);
+    background-size: 100% 100%;
+    border-radius: 2px;
+    height: 36px;
+    width: 36px;
+  }
+  
+  .index .div-css-26 {
+    height: 36px;
+    left: 96px;
+    position: absolute;
+    top: 0;
+    width: 48px;
+  }
+  
+  .index .div-css-27 {
+    background-image: url(https://cdn.animaapp.com/projects/64fc3c2a75da8a3f301984c2/releases/64fc3c4fd9fe5940dd7aef7c/img/div-css-1dbjc4n-5@2x.png);
+    background-size: 100% 100%;
+    border-radius: 2px;
+    height: 36px;
+    width: 36px;
+  }
+  
+  .index .header {
+    background-color: #005ca8;
+    box-shadow: 0px 3px 8px #006ac233;
+    height: 72px;
+    left: 0;
+    mix-blend-mode: normal;
+    position: absolute;
+    top: 0;
+    width: 1920px;
+  }
+  
+  .index .section {
+    height: 72px;
+    position: relative;
+    width: 1920px;
+  }
+  
+  .index .div-component-logo {
+    height: 41px;
+    left: 50px;
+    position: absolute;
+    top: 16px;
+    width: 105px;
+  }
+  
+  .index .link-nnares-logo {
+    height: 36px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 105px;
+  }
+  
+  .index .form-margin {
+    height: 48px;
+    left: 155px;
+    position: absolute;
+    top: 12px;
+    width: 1204px;
+  }
+  
+  .index .form {
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0px 1px 4px #006ac233;
+    height: 48px;
+    left: 109px;
+    position: relative;
+    width: 1095px;
+  }
+  
+  .index .div-2 {
+    height: 46px;
+    position: relative;
+  }
+  

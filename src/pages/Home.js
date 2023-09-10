@@ -128,6 +128,7 @@ const Home = (props) => {
               timeout: 500,
             },
           }}
+          sx={{ "& .MuiBackdrop-root": { backgroundColor: "rgba(0,0,0,0.9)" } }}
         >
           <Box sx={style}>
             <button className="close-button" onClick={closeModal}>
