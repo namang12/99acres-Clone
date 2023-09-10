@@ -62,10 +62,10 @@ const PostPropertyForm = () => {
 
   const onSubmit = async (e) => {
     const formData = new FormData();
+    formData.append("PropertyName", propertyName);
     formData.append("PropertyOptions", propertyOption);
     formData.append("PropertyType", type);
     formData.append("PropertyArea", area);
-    formData.append("PropertyName", propertyName);
     formData.append("Address", address);
     formData.append("City", city);
     formData.append("State", state);
@@ -76,7 +76,7 @@ const PostPropertyForm = () => {
     const user = getUserFromLocalStorage();
     try {
       const response = await axios.post(
-        "https://localhost:7046/api/PostForm/PostProperty",
+        `${process.env.REACT_APP_API_URL}/PostForm/PostProperty`,
         formData,
         {
           headers: {

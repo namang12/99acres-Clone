@@ -1,5 +1,4 @@
 import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
@@ -31,7 +30,7 @@ export default function ForgotPassword() {
   const onSubmit = async (data) => {
     setLoading(true);
     await axios
-      .post(`${process.env.REACT_APP_API_URL}/Mail/SendMail`, data)
+      .post(`${process.env.REACT_APP_API_URL}/UserAuthentication/ForgotPassword`, data)
       .then((res) => {
         console.log(res);
         setLoading(false);
@@ -42,7 +41,7 @@ export default function ForgotPassword() {
             horizontal: "right",
           },
         });
-        navigate("/signin");
+        navigate("/");
       })
       .catch((err) => {
         setLoading(false);
