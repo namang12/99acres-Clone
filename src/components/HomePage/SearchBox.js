@@ -13,8 +13,9 @@ import {
   handleSearchOption,
   searchSuggestions,
 } from "../../redux/SearchBox/SearchSlice";
-import SearchIcon from "@mui/icons-material/Search";
 import Autocomplete, { createFilterOptions } from "@mui/material/Autocomplete";
+import { useNavigate } from "react-router-dom";
+import { useSnackbar } from "notistack";
 const filter = createFilterOptions();
 
 const optionButtons = [
@@ -33,12 +34,28 @@ const SearchBox = () => {
     (store) => store.search
   );
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { enqueueSnackbar } = useSnackbar();
 
   useEffect(() => {
     if (value !== "") {
       dispatch(searchSuggestions(value));
     }
   }, [value]);
+
+  const handleSearchClick = () => {
+    if (value === "" || city === "") {
+      enqueueSnackbar("Enter City for Search", {
+        variant: "warning",
+        anchorOrigin: {
+          vertical: "top",
+          horizontal: "center",
+        },
+      });
+    } else {
+      navigate("/properties");
+    }
+  };
 
   return (
     <Paper
@@ -159,6 +176,7 @@ const SearchBox = () => {
         />
         <Box sx={{ p: "16px" }}>
           <Button
+            onClick={handleSearchClick}
             variant="contained"
             sx={{
               textTransform: "capitalize",

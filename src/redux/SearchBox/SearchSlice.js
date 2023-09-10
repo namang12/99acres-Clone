@@ -1,5 +1,8 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { searchSuggestionsThunk } from "./SearchThunk";
+import {
+  getFilteredPropertiesThunk,
+  searchSuggestionsThunk,
+} from "./SearchThunk";
 import { toast } from "react-toastify";
 
 const initialState = {
@@ -13,12 +16,25 @@ const initialState = {
   withPhotos: false,
   isSuggestionsLoading: false,
   suggestions: [],
+  properties: [],
+  isPropertyLoading: false,
 };
 
 export const searchSuggestions = createAsyncThunk(
   "search/searchSuggestions",
   async (city, thunkAPI) => {
     return searchSuggestionsThunk("/Search", city, thunkAPI);
+  }
+);
+
+export const getFilteredProperties = createAsyncThunk(
+  "properties/getFilteredProperties",
+  async (filters, ThunkAPI) => {
+    return getFilteredPropertiesThunk(
+      "/PostForm/details/Filter",
+      filters,
+      ThunkAPI
+    );
   }
 );
 
@@ -101,6 +117,17 @@ const SearchSlice = createSlice({
         toast.error(payload.message, {
           position: toast.POSITION.TOP_CENTER,
         });
+      })
+      .addCase(getFilteredProperties.pending, (state) => {
+        state.isPropertyLoading = true;
+      })
+      .addCase(getFilteredProperties.fulfilled, (state, { payload }) => {
+        state.isPropertyLoading = false;
+        state.properties = payload;
+      })
+      .addCase(getFilteredProperties.rejected, (state, { payload }) => {
+        state.isPropertyLoading = false;
+        console.log(payload);
       });
   },
 });

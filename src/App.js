@@ -32,7 +32,7 @@ function App() {
           }
         />
         <Route
-          path="/singlep"
+          path="/properties/:id"
           element={
             <ProtectedRoute>
               <SingleP />

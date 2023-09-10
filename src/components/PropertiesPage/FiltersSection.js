@@ -28,13 +28,7 @@ import DoneIcon from "@mui/icons-material/Done";
 import AddIcon from "@mui/icons-material/Add";
 
 const noOfBedroomsList = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-const propertyTypeList = [
-  "Residential Apartment",
-  "Independent/Builder Floor",
-  "Independent House/Villa",
-  "1 RK/ Studio Apartment",
-  "Serviced Apartments",
-];
+const propertyTypeList = ["Flat", "Villa", "Land"];
 
 function valuetext(value) {
   return `${value}`;
@@ -196,7 +190,13 @@ const FiltersSection = () => {
                 Type of Property
               </Typography>
             </AccordionSummary>
-            <AccordionDetails>
+            <AccordionDetails
+              sx={{
+                display: "grid",
+                gap: 1,
+                gridTemplateColumns: "repeat(3, 1fr)",
+              }}
+            >
               {propertyTypeList.map((type, idx) => (
                 <Chip
                   key={idx}
