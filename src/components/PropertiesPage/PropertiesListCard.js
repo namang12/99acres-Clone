@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Box, Button, Divider, Paper, Typography } from "@mui/material";
 import ContactModal from "./ContactModal";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useSnackbar } from "notistack";
 
 const PropertiesListCard = ({ property }) => {
   const [open, setOpen] = useState(false);
@@ -18,6 +20,36 @@ const PropertiesListCard = ({ property }) => {
     propertyOptions,
   } = property;
   const navigate = useNavigate();
+  const { user } = useSelector((store) => store.user);
+  const { enqueueSnackbar } = useSnackbar();
+
+  const handleCardNavigate = () => {
+    if (!user) {
+      enqueueSnackbar("Login to explore property", {
+        variant: "warning",
+        anchorOrigin: {
+          vertical: "top",
+          horizontal: "center",
+        },
+      });
+    } else {
+      navigate(`/properties/${propertyId}`);
+    }
+  };
+
+  const handleContactModalOpen = () => {
+    if (!user) {
+      enqueueSnackbar("Login to view owner details", {
+        variant: "warning",
+        anchorOrigin: {
+          vertical: "top",
+          horizontal: "center",
+        },
+      });
+    } else {
+      setOpen(true);
+    }
+  };
 
   return (
     <>
@@ -70,7 +102,7 @@ const PropertiesListCard = ({ property }) => {
         >
           <Box>
             <Typography
-              onClick={() => navigate(`/properties/${propertyId}`)}
+              onClick={() => handleCardNavigate()}
               sx={{
                 fontFamily: "Open Sans",
                 fontSize: "14px",
@@ -82,7 +114,7 @@ const PropertiesListCard = ({ property }) => {
               {city}
             </Typography>
             <Typography
-              onClick={() => navigate(`/properties/${propertyId}`)}
+              onClick={() => handleCardNavigate()}
               sx={{
                 fontFamily: "Open Sans",
                 fontSize: "14px",
@@ -96,7 +128,7 @@ const PropertiesListCard = ({ property }) => {
               {propertyName}
             </Typography>
             <Box
-              onClick={() => navigate(`/properties/${propertyId}`)}
+              onClick={() => handleCardNavigate()}
               sx={{ mt: 1, display: "flex", gap: 8, cursor: "pointer" }}
             >
               <Box>
@@ -230,7 +262,7 @@ const PropertiesListCard = ({ property }) => {
             <Divider sx={{ mt: 3, background: "rgba(0,0,0,0.15)" }} />
             <Box sx={{ mt: 2, display: "flex", justifyContent: "flex-end" }}>
               <Button
-                onClick={() => setOpen(true)}
+                onClick={handleContactModalOpen}
                 disableRipple
                 sx={{
                   padding: "8px 16px",
@@ -249,7 +281,7 @@ const PropertiesListCard = ({ property }) => {
                 View Phone Number
               </Button>
               <Button
-                onClick={() => setOpen(true)}
+                onClick={handleContactModalOpen}
                 disableRipple
                 variant="contained"
                 sx={{

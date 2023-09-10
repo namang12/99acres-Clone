@@ -13,6 +13,7 @@ import ForgotPassword from "./pages/ForgetPassword";
 import ChangePassword from "./pages/ChangePassword";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -27,14 +28,7 @@ function App() {
             </ProtectedRoute>
           }
         />
-        <Route
-          path="/properties"
-          element={
-            <ProtectedRoute>
-              <Properties />
-            </ProtectedRoute>
-          }
-        />
+        <Route path="/properties" element={<Properties />} />
         <Route
           path="/properties/:id"
           element={
@@ -56,6 +50,7 @@ function App() {
         />
         <Route path="/aboutus" element={<About />} />
         <Route path="/contactus" element={<Contact />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <ToastContainer position="top-center" />
     </BrowserRouter>
