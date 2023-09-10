@@ -3,6 +3,7 @@ import "./LoginForm.css";
 import { useDispatch } from "react-redux";
 import { loginUser } from "../../redux/User/UserSlice";
 import { useSnackbar } from "notistack";
+import Link from "@mui/material/Link";
 
 const initialState = {
   email: "",
@@ -89,7 +90,10 @@ const LoginForm = ({ closeModal, switchToSignUp }) => {
                     className=""
                     style={{ color: "blue", cursor: "pointer" }}
                   >
-                    Forgot password ?
+                    <Link href="/forgotpassword" variant="body2">
+                      Forgot password ?
+                    </Link>
+
                     {/* <span style={{ color: "white" }}>
                       kfm3;offojfoFM3;FM3;FFO43FOL4KGFO3f
                     </span> */}
