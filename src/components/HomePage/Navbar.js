@@ -150,7 +150,11 @@ export default function Navbar({ openModal, isHome = true }) {
               {!user && (
                 <MenuItem onClick={openModal}>Login / Register</MenuItem>
               )}
-              {user && <MenuItem onClick={handleClose}>Profile</MenuItem>}
+              {user && (
+                <MenuItem onClick={() => navigate("/userprofile")}>
+                  Profile
+                </MenuItem>
+              )}
               {user && (
                 <MenuItem
                   onClick={() => dispatch(clearStore("Logging out..."))}
