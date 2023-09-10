@@ -149,7 +149,7 @@ const Home = (props) => {
           </Box>
         </Modal>
       </div>
-      <GetStarted />
+      <GetStarted openModal={openModal} />
       <MiddleSection />
       <BottomSection />
       <Footer />

@@ -44,11 +44,18 @@ function App() {
           }
         />
         <Route path="/subscription" element={<Planpage />} />
-        <Route path="/forgotpassword" element={<ForgotPassword/>} />
-        <Route path="/changepassword" element={<ChangePassword/>} />
-        <Route path="/polotno-editor" element={<PolotnoEditor />} />
-        <Route path="/aboutus" element={<About/>} />
-        <Route path="/contactus" element={<Contact/>} />
+        <Route path="/forgotpassword" element={<ForgotPassword />} />
+        <Route path="/changepassword" element={<ChangePassword />} />
+        <Route
+          path="/polotno-editor"
+          element={
+            <ProtectedRoute>
+              <PolotnoEditor />
+            </ProtectedRoute>
+          }
+        />
+        <Route path="/aboutus" element={<About />} />
+        <Route path="/contactus" element={<Contact />} />
       </Routes>
       <ToastContainer position="top-center" />
     </BrowserRouter>

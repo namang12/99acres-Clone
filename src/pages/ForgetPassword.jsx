@@ -14,7 +14,7 @@ import { useSnackbar } from "notistack";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { Header } from "../components/PlanPage/Header";
-import "./ForgetPassword.css"
+import "./CSS/ForgetPassword.css";
 import { LoadingButton } from "@mui/lab";
 
 export default function ForgotPassword() {
@@ -59,73 +59,73 @@ export default function ForgotPassword() {
 
   return (
     <>
-    <Header/>
-    <div className="div-bggradientpassword" />
-    <Container component="main" maxWidth="xs">
-      <Box
-        sx={{
-          marginTop: 10,
-          marginBottom:35,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
-        <Avatar sx={{ m: 1, bgcolor: "#005ca8" }}>
-          <LockPersonIcon />
-        </Avatar>
-        <Typography component="h1" variant="h5">
-          Forgot password
-        </Typography>
+      <Header />
+      <div className="div-bggradientpassword" />
+      <Container component="main" maxWidth="xs">
         <Box
-          component="form"
-          onSubmit={handleSubmit(onSubmit)}
-          noValidate
-          sx={{ mt: 1 }}
+          sx={{
+            marginTop: 10,
+            marginBottom: 35,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
         >
-          <Typography variant="subtitle1" sx={{ mt: 1 }}>
-            Lost your password? Please enter your username or email address. You
-            will receive a link to create a new password via email.
+          <Avatar sx={{ m: 1, bgcolor: "#005ca8" }}>
+            <LockPersonIcon />
+          </Avatar>
+          <Typography component="h1" variant="h5">
+            Forgot password
           </Typography>
-          <TextField
-            margin="normal"
-            label="Email"
-            name="email"
-            autoComplete="email"
-            fullWidth
-            id="standard-basic"
-            variant="standard"
-            error={errors.email ? true : false}
-            helperText={
-              (errors.email?.type === "required" && "Email is required") ||
-              (errors.email?.type === "pattern" && "Email format is incorrect")
-            }
-            {...register("email", {
-              required: true,
-              pattern: /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/,
-            })}
-          />
-          <LoadingButton
-            type="submit"
-            fullWidth
-            loading={loading}
-            variant="contained"
-            sx={{ mt: 3, mb: 2 }}
+          <Box
+            component="form"
+            onSubmit={handleSubmit(onSubmit)}
+            noValidate
+            sx={{ mt: 1 }}
           >
-            Reset Password
-          </LoadingButton>
-          <Grid container justifyContent="flex-end">
-            <Grid item>
-              <Link href="/signin" variant="body2">
-                {"Remember your password?"}
-              </Link>
+            <Typography variant="subtitle1" sx={{ mt: 1 }}>
+              Lost your password? Please enter your username or email address.
+              You will receive a link to create a new password via email.
+            </Typography>
+            <TextField
+              margin="normal"
+              label="Email"
+              name="email"
+              autoComplete="email"
+              fullWidth
+              id="standard-basic"
+              variant="standard"
+              error={errors.email ? true : false}
+              helperText={
+                (errors.email?.type === "required" && "Email is required") ||
+                (errors.email?.type === "pattern" &&
+                  "Email format is incorrect")
+              }
+              {...register("email", {
+                required: true,
+                pattern: /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/,
+              })}
+            />
+            <LoadingButton
+              type="submit"
+              fullWidth
+              loading={loading}
+              variant="contained"
+              sx={{ mt: 3, mb: 2 }}
+            >
+              Reset Password
+            </LoadingButton>
+            <Grid container justifyContent="flex-end">
+              <Grid item>
+                <Link href="/signin" variant="body2">
+                  {"Remember your password?"}
+                </Link>
+              </Grid>
             </Grid>
-          </Grid>
+          </Box>
         </Box>
-      </Box>
-      
-    </Container>
-    <Footer/>
+      </Container>
+      <Footer />
     </>
   );
 }

@@ -15,6 +15,7 @@ const PropertiesListCard = ({ property }) => {
     propertyId,
     contactNo,
     email,
+    propertyOptions,
   } = property;
   const navigate = useNavigate();
 
@@ -77,7 +78,8 @@ const PropertiesListCard = ({ property }) => {
                 cursor: "pointer",
               }}
             >
-              3 BHK Serviced Apartment for rent in {address}, {city}
+              3 BHK Serviced Apartment for {propertyOptions} in {address},{" "}
+              {city}
             </Typography>
             <Typography
               onClick={() => navigate(`/properties/${propertyId}`)}
