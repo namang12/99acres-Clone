@@ -16,7 +16,7 @@ import { useNavigate } from "react-router-dom";
 // import { addUser } from "../Redux/Actions/user";
 import { useDispatch } from "react-redux";
 import { useSnackbar } from "notistack";
-import "./ForgetPassword.css"
+import "./CSS/ForgetPassword.css";
 import { Header } from "../components/PlanPage/Header";
 
 export default function SignIn() {
@@ -82,107 +82,111 @@ export default function SignIn() {
 
   return (
     <>
-    <Header/>
-    <div className="div-bggradientpassword" />
-    <Container component="main" maxWidth="xs">
-      <Box
-        sx={{
-          marginTop: 10,
-          marginBottom:35,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
-        <Avatar sx={{ m: 1, bgcolor: "#005ca8" }}>
-          <LockOutlinedIcon />
-        </Avatar>
-        <Typography component="h1" variant="h5">
-          Change your Password
-        </Typography>
+      <Header />
+      <div className="div-bggradientpassword" />
+      <Container component="main" maxWidth="xs">
         <Box
-          component="form"
-          onSubmit={handleSubmit(onSubmit)}
-          noValidate
-          sx={{ mt: 1 }}
+          sx={{
+            marginTop: 10,
+            marginBottom: 35,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
         >
-          <TextField
-            margin="normal"
-            fullWidth
-            id="password"
-            label="New Password"
-            name="password"
-            type="password"
-            autoComplete="password"
-            error={errors.password ? true : false}
-            helperText={
-              (errors.password?.type === "required" &&
-                "New Password is required") ||
-              (errors.password?.type === "pattern" &&
-                "New Password format is incorrect")
-            }
-            {...register("password", {
-              required: true,
-              pattern: /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/,
-            })}
-          />
-          <TextField
-            margin="normal"
-            fullWidth
-            name="confirmPassword"
-            label="Confirm Password"
-            type="Password"
-            id="confirmPassword"
-            autoComplete="current-confirmPassword"
-            error={errors.confirmPassword ? true : false}
-            helperText={
-              (errors.confirmPassword?.type === "required" &&
-                "Confirm Password is required") ||
-              (errors.confirmPassword?.validate === "validate" &&
-                "Passwords do not match")
-            }
-            {...register("confirmPassword", {
-              required: true,
-              validate: (value) =>
-                value === password || "Passwords do not match",
-            })}
-          />
-          <LoadingButton
-            type="submit"
-            fullWidth
-            loading={loading}
-            variant="contained"
-            sx={{ mt: 3, mb: 2 }}
+          <Avatar sx={{ m: 1, bgcolor: "#005ca8" }}>
+            <LockOutlinedIcon />
+          </Avatar>
+          <Typography component="h1" variant="h5">
+            Change your Password
+          </Typography>
+          <Box
+            component="form"
+            onSubmit={handleSubmit(onSubmit)}
+            noValidate
+            sx={{ mt: 1 }}
           >
-            Change Password
-          </LoadingButton>
-          <Grid container>
-            <Grid item xs>
-              <Link href="/forgotpassword" variant="body2">
-                Didn't recieve Email?
-              </Link>
-            </Grid>
-            {/* <Grid item>
+            <TextField
+              margin="normal"
+              fullWidth
+              id="password"
+              label="New Password"
+              name="password"
+              type="password"
+              autoComplete="password"
+              error={errors.password ? true : false}
+              helperText={
+                (errors.password?.type === "required" &&
+                  "New Password is required") ||
+                (errors.password?.type === "pattern" &&
+                  "New Password format is incorrect")
+              }
+              {...register("password", {
+                required: true,
+                pattern: /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/,
+              })}
+            />
+            <TextField
+              margin="normal"
+              fullWidth
+              name="confirmPassword"
+              label="Confirm Password"
+              type="Password"
+              id="confirmPassword"
+              autoComplete="current-confirmPassword"
+              error={errors.confirmPassword ? true : false}
+              helperText={
+                (errors.confirmPassword?.type === "required" &&
+                  "Confirm Password is required") ||
+                (errors.confirmPassword?.validate === "validate" &&
+                  "Passwords do not match")
+              }
+              {...register("confirmPassword", {
+                required: true,
+                validate: (value) =>
+                  value === password || "Passwords do not match",
+              })}
+            />
+            <LoadingButton
+              type="submit"
+              fullWidth
+              loading={loading}
+              variant="contained"
+              sx={{ mt: 3, mb: 2 }}
+            >
+              Change Password
+            </LoadingButton>
+            <Grid container>
+              <Grid item xs>
+                <Link href="/forgotpassword" variant="body2">
+                  Didn't recieve Email?
+                </Link>
+              </Grid>
+              {/* <Grid item>
               <Link href="/signup" variant="body2">
                 {"Don't have an account? Sign Up"}
               </Link>
             </Grid> */}
-          </Grid>
+            </Grid>
+          </Box>
         </Box>
-      </Box>
-      
-      <Snackbar
-        open={open}
-        autoHideDuration={6000}
-        onClose={handleClose}
-        anchorOrigin={{ vertical: "top", horizontal: "right" }}
-      >
-        <Alert onClose={handleClose} severity={severity} sx={{ width: "100%" }}>
-          {message}
-        </Alert>
-      </Snackbar>
-    </Container>
-    <Footer/>
+
+        <Snackbar
+          open={open}
+          autoHideDuration={6000}
+          onClose={handleClose}
+          anchorOrigin={{ vertical: "top", horizontal: "right" }}
+        >
+          <Alert
+            onClose={handleClose}
+            severity={severity}
+            sx={{ width: "100%" }}
+          >
+            {message}
+          </Alert>
+        </Snackbar>
+      </Container>
+      <Footer />
     </>
   );
 }

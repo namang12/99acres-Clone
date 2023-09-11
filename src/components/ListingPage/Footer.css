@@ -224,3 +224,7 @@
   border: 0px;
   text-decoration: none;
 }
+
+.div-footer .clicky{
+  cursor: pointer;
+}

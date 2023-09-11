@@ -1,5 +1,5 @@
 import React from "react";
-import "./aboutus.css";
+import "./CSS/aboutus.css";
 import { Navbar } from "../components/HomePage";
 import Footer from "../components/ListingPage/Footer";
 import GoToTop from "../components/PlanPage/GoToTop";

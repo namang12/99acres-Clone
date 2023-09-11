@@ -95,7 +95,7 @@ const Properties = (props) => {
   return (
     <>
       <Box sx={{ background: "#f4f5f7", minHeight: "100vh" }}>
-        <Navbar isHome={false} />
+        <Navbar isHome={false} openModal={() => navigate("/")} />
         <Container sx={{ paddingTop: 0.5 }}>
           <Breadcrumbs
             id="back-to-top-anchor"

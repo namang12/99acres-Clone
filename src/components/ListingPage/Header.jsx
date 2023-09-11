@@ -9,8 +9,7 @@ const Header = () => {
     <header className="header">
       <div className="section">
         <div className="link-nnares-logo" onClick={() => navigate("/")} />
-
-        <div className="div-component">
+        {/* <div className="div-component">
           <div className="div-pagecomponent-8">
             <div className="pseudo-5" />
             <span className="material-symbols-rounded account-icon">
@@ -18,7 +17,7 @@ const Header = () => {
             </span>
             <div className="pseudo-4" />
           </div>
-        </div>
+        </div> */}
       </div>
     </header>
   );

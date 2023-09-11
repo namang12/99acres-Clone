@@ -11,15 +11,34 @@ import CarouselComponent from "./CarouselComponent";
 import { DarkTypography, LightTypography } from "../Common";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useSnackbar } from "notistack";
 
-const GetStarted = () => {
+const GetStarted = ({ openModal }) => {
   const navigate = useNavigate();
+  const { user } = useSelector((store) => store.user);
+  const { enqueueSnackbar } = useSnackbar();
+
+  const handleClick = () => {
+    if (!user) {
+      enqueueSnackbar("Login to explore our editor", {
+        variant: "warning",
+        anchorOrigin: {
+          vertical: "top",
+          horizontal: "center",
+        },
+      });
+      openModal();
+    } else {
+      navigate("/polotno-editor");
+    }
+  };
 
   return (
     <Container sx={{ mt: 4 }}>
       <Box sx={{ display: "flex", justifyContent: "center" }}>
         <Paper
-          onClick={() => navigate("/polotno-editor")}
+          onClick={handleClick}
           elevation={0}
           sx={{
             background: "#d7f2e380",
