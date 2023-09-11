@@ -14,6 +14,7 @@ import ChangePassword from "./pages/ChangePassword";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import UserProfile from "./pages/UserProfile";
 
 function App() {
   return (
@@ -51,6 +52,14 @@ function App() {
         <Route path="/aboutus" element={<About />} />
         <Route path="/contactus" element={<Contact />} />
         <Route path="*" element={<NotFound />} />
+        <Route
+          path="/userprofile"
+          element={
+            <ProtectedRoute>
+              <UserProfile />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
       <ToastContainer position="top-center" />
     </BrowserRouter>
