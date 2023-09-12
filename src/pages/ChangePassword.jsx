@@ -8,7 +8,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { useForm } from "react-hook-form";
 import Footer from "../components/ListingPage/Footer";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { Alert, Snackbar } from "@mui/material";
 import { LoadingButton } from "@mui/lab";
@@ -18,6 +18,7 @@ import { useDispatch } from "react-redux";
 import { useSnackbar } from "notistack";
 import "./CSS/ForgetPassword.css";
 import { Header } from "../components/PlanPage/Header";
+import { useParams, useLocation } from "react-router-dom";
 
 export default function SignIn() {
   const navigate = useNavigate();
@@ -28,7 +29,15 @@ export default function SignIn() {
   const [severity, setSeverity] = useState("success");
   const { enqueueSnackbar } = useSnackbar();
 
-  const userEmail = JSON.parse(localStorage.getItem("user")).email;
+  // const location = useLocation();
+  // const queryParams = new URLSearchParams(location.search);
+  // const token = queryParams.get("token");
+  
+  // const { token } = useParams();
+
+  const url = window.location.href;
+  const tokenMatch = url.match(/token=([^&]*)/);
+  const token = tokenMatch ? tokenMatch[1] : null;
 
   const {
     register,
@@ -44,19 +53,24 @@ export default function SignIn() {
   });
 
   const onSubmit = (data) => {
-    console.log(data);
+    console.log(token);
+    const resetData = {
+      password: data.password,
+      resetToken: token,
+    };
+    console.log(resetData);
     setLoading(true);
     axios
       .post(
-        `${process.env.REACT_APP_API_URL}/ResetPassword/ResetPassword/${userEmail}`,
-        data
+        `${process.env.REACT_APP_API_URL}/UserAuthentication/ResetPassword`,
+        resetData
       )
       .then((response) => {
         console.log(response);
 
         setLoading(false);
         reset();
-        navigate("/signin");
+        navigate("/");
         enqueueSnackbar("Password Changed Successfully", {
           variant: "success",
           anchorOrigin: {
@@ -67,7 +81,6 @@ export default function SignIn() {
       })
       .catch((error) => {
         console.log(error);
-        //setMessage(error.response.data || "Error while Signing in");
         setSeverity("error");
         setLoading(false);
         setOpen(true);
