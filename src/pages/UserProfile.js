@@ -5,9 +5,8 @@ import {
   Paper,
   TextField,
   Grid,
-  LinearProgress,
 } from "@mui/material";
-import React, { useState } from "react";
+import React from "react";
 import { Navbar } from "../components/HomePage";
 import { useSelector } from "react-redux";
 
