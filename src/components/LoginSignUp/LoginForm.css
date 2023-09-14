@@ -1,0 +1,122 @@
+/* 
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  } */
+
+.close-button {
+  position: absolute;
+  top: 2px;
+  right: 10px;
+  font-size: 30px;
+  background: none;
+  border: none;
+  z-index: 9999;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+/* Style for the close button (optional) */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.card {
+  background-color: #fff;
+  border: none;
+  height: 500px;
+  overflow: hidden;
+}
+
+.input-field {
+  position: relative;
+  margin-top: 5px;
+}
+
+.input-field input {
+  height: 50px;
+  outline: none !important;
+  border: 2px solid #eee;
+}
+
+.input-field input:focus {
+  box-shadow: none;
+  outline: none !important;
+}
+
+.input-field label {
+  position: absolute;
+  top: 10px;
+  left: 6px;
+  transition: all 0.5s;
+  background-color: #fff;
+  padding: 0px 10px;
+  border-radius: 20px;
+}
+
+.input-field input:focus + label,
+.input-field input:valid + label {
+  position: absolute;
+  top: -10px;
+  left: 6px;
+  font-size: 13px;
+}
+
+.signup-button {
+  height: 50px;
+  font-size: 19px;
+  text-transform: uppercase;
+}
+
+.right-side {
+  position: relative;
+}
+
+.right-side-content {
+  height: 500px;
+  display: inline-block;
+  width: 260px;
+  background: url(https://static.99acres.com/universalhp/img/Asset_2mdpi.png)
+      no-repeat left bottom,
+    linear-gradient(180deg, #3498db 0, #16a085 100%);
+  color: #fff;
+  font-size: 12px;
+  position: relative;
+  background-size: contain;
+  padding: 10px;
+}
+
+.right-side-content .content {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  padding: 0px 40px;
+}
+
+.content {
+  display: flex;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  margin-top: -150px;
+}
+
+.content h6 {
+  text-align: left;
+}
+
+.content span {
+  font-size: 12px;
+}

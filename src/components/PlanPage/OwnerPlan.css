@@ -1,0 +1,426 @@
+.owner-plan {
+  height: 621px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.owner-plan .text-wrapper {
+  color: #8993a4;
+  font-family: "Open Sans-SemiBold", Helvetica;
+  font-size: 14px;
+  font-weight: 600;
+  height: 20px;
+  letter-spacing: 0;
+  line-height: 20px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.owner-plan .heading-pick-a {
+  color: #091e42;
+  font-family: "Open Sans-Bold", Helvetica;
+  font-size: 24px;
+  font-weight: 700;
+  height: 32px;
+  letter-spacing: 0;
+  line-height: 32px;
+  position: relative;
+  text-align: center;
+  top: 10px;
+  white-space: nowrap;
+}
+
+.owner-plan .div-planscatalog {
+  display: flex;
+  justify-content: center;
+  border-radius: 20px;
+  display: flex;
+  gap: 10.99px;
+  position: relative;
+  top: 20px;
+  width: 100%;
+}
+
+.owner-plan .div-self-service {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 594.5px;
+}
+
+.owner-plan .div-planscatalog-2 {
+  background-color: #f0f9ff;
+  border: 1px solid;
+  border-color: #d6efff;
+  border-radius: 16px 16px 0px 0px;
+  height: 87.98px;
+  position: relative;
+  justify-content: center;
+  width: 594.5px;
+  display: flex;
+}
+
+.owner-plan .i-icons-bosd-wrapper {
+  align-items: flex-start;
+  background-color: #dceffe;
+  border-radius: 24px;
+  height: 30px;
+  display: inline-flex;
+  justify-content: center;
+  padding: 4.2px 4px 3.8px;
+  position: relative;
+  margin-top: 29px;
+}
+
+.owner-plan .text-wrapper-2 {
+  color: #42526e;
+  font-family: "Open Sans-Bold", Helvetica;
+  font-size: 18px;
+  font-weight: 700;
+  height: 24px;
+  letter-spacing: 0;
+  line-height: 24px;
+  position: relative;
+  text-align: center;
+  margin-top: 31px;
+  margin-left: 7px;
+  white-space: nowrap;
+}
+
+.owner-plan .div-planscatalog-3 {
+  align-items: flex-start;
+  display: flex;
+  flex: 0 0 auto;
+  margin-top: -8.98px;
+  padding: 0px 0.02px 0px 0px;
+  position: relative;
+  width: 594.5px;
+}
+
+.owner-plan .div-product {
+  border: 1px solid #fff;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0px 1px 4px #1f5ca333;
+  height: 391.43px;
+  position: relative;
+  width: 297.24px;
+  padding: 20px;
+}
+
+.owner-plan .div-d-bos {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 257px;
+}
+
+.owner-plan .class {
+  align-items: flex-start;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 8px;
+  position: relative;
+}
+
+.owner-plan .png {
+  align-self: stretch;
+  background-image: url(https://static.99acres.com/universalapp/img/Plan3X.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  border-radius: 8px;
+  position: relative;
+  width: 41.99px;
+}
+
+.owner-plan .div-d-bos-2 {
+  align-items: flex-start;
+  align-self: stretch;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.owner-plan .text-wrapper-3 {
+  color: #0078db;
+  font-family: "Open Sans-Bold", Helvetica;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 21.8px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.owner-plan .text-wrapper-4 {
+  color: #42526e;
+  font-family: "Open Sans-SemiBold", Helvetica;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 18px;
+  margin-top: -1.22px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.owner-plan .p-d-bos {
+  align-items: flex-start;
+  display: flex;
+  height: 54px;
+  position: relative;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.owner-plan .p {
+  color: #42526e;
+  font-family: "Open Sans-Regular", Helvetica;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 18px;
+  margin-top: -1px;
+  position: relative;
+  width: fit-content;
+}
+
+.owner-plan .div-d-bos-3 {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-top: 15px;
+  width: 257px;
+}
+
+.owner-plan .div-hd-b {
+  height: 55.51px;
+  position: relative;
+  width: 126.67px;
+}
+
+.owner-plan .text-wrapper-5 {
+  color: #253858;
+  font-family: "Open Sans-Bold", Helvetica;
+  font-size: 16px;
+  font-weight: 700;
+  height: 20px;
+  left: 0;
+  letter-spacing: 0;
+  line-height: 20px;
+  position: relative;
+  top: 0;
+  white-space: nowrap;
+}
+
+.owner-plan .text-wrapper-6 {
+  color: #42526e;
+  font-family: "Open Sans-Regular", Helvetica;
+  font-size: 12px;
+  font-weight: 400;
+  height: 12px;
+  left: 65px;
+  letter-spacing: 0;
+  line-height: 12px;
+  position: absolute;
+  top: 5px;
+  white-space: nowrap;
+}
+
+.owner-plan .text-wrapper-6a {
+  color: #42526e;
+  font-family: "Open Sans-Regular", Helvetica;
+  font-size: 12px;
+  font-weight: 400;
+  height: 12px;
+  left: 73px;
+  letter-spacing: 0;
+  line-height: 12px;
+  position: absolute;
+  top: 5px;
+  white-space: nowrap;
+}
+
+.owner-plan .text-wrapper-7 {
+  color: #42526e;
+  font-family: "Open Sans-Regular", Helvetica;
+  font-size: 10px;
+  font-weight: 400;
+  height: 17px;
+  left: 0;
+  letter-spacing: 0;
+  line-height: 17px;
+  position: relative;
+  margin-top: 3px;
+  white-space: nowrap;
+}
+
+.owner-plan .button-wrapper {
+  align-items: flex-start;
+  display: inline-flex;
+  flex: 0 0 auto;
+  justify-content: center;
+  padding: 0px 0px 20px;
+  position: relative;
+}
+
+.owner-plan .button-ownerplan {
+  all: unset;
+  align-items: flex-start;
+  background-color: #0078db;
+  border-radius: 4px;
+  box-shadow: 0px 1px 4px #006ac2;
+  box-sizing: border-box;
+  display: flex;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100px;
+}
+
+.owner-plan .text-wrapper-8 {
+  color: #ffffff;
+  font-family: "Open Sans-Bold", Helvetica;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 20px;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.owner-plan .div-wrapper {
+  align-items: flex-start;
+  background-color: #e4effe8a;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  justify-content: space-around;
+  overflow: hidden;
+  padding: 13.99px 12.98px 16.01px 12.99px;
+  position: relative;
+  margin-top: 17px;
+  width: 254px;
+}
+
+.owner-plan .div-hd-bd {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 120px;
+  padding: 0px 0px 48.03px;
+  position: relative;
+  width: 100%;
+}
+
+.owner-plan .div-d-bos-4 {
+  align-items: flex-start;
+  display: flex;
+  flex: 0 0 auto;
+  gap: 8px;
+  position: relative;
+  width: 100%;
+}
+
+.owner-plan .greytickx-png {
+  align-self: stretch;
+  background-image: url(https://static.99acres.com/universalapp/img/GreyTick3X.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  position: relative;
+  width: 18px;
+  height: 18px;
+}
+
+.owner-plan .text-wrapper-9 {
+  color: #42526e;
+  font-family: "Open Sans-Regular", Helvetica;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 15px;
+  margin-top: 2px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.owner-plan .planplusx-png {
+  align-self: stretch;
+  background-image: url(https://static.99acres.com/universalapp/img/PlanPlus3X.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  border-radius: 8px;
+  position: relative;
+  width: 41.99px;
+}
+
+.owner-plan .div-assisted-plans {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 594.5px;
+}
+
+.owner-plan .div-planscatalog-4 {
+  background-color: #fff5e4;
+  border: 1px solid;
+  border-color: #ffe6bc;
+  border-radius: 16px 16px 0px 0px;
+  box-shadow: -1px 0px 4px #cccccc66;
+  width: 100%;
+  height: 87.98px;
+  position: relative;
+  justify-content: center;
+  width: 594.5px;
+  display: flex;
+}
+
+.owner-plan .img-wrapper {
+  align-items: flex-start;
+  background-color: #fde4b8;
+  border-radius: 24px;
+  height: 30px;
+  width: 30px;
+  display: inline-flex;
+  justify-content: center;
+  padding: 4.2px 4px 3.8px;
+  position: relative;
+  margin-top: 29px;
+}
+
+.owner-plan .assistx-png {
+  align-self: stretch;
+  background-image: url(https://static.99acres.com/universalapp/img/Assist3X.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  border-radius: 8px;
+  position: relative;
+  width: 41.99px;
+}
+
+.owner-plan .assistplusx-png {
+  align-self: stretch;
+  background-image: url(https://static.99acres.com/universalapp/img/AssistPlus3X.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  border-radius: 8px;
+  position: relative;
+  width: 41.99px;
+}

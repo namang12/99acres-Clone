@@ -1,0 +1,204 @@
+.div-postform {
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #ebecf0;
+  border-radius: 8px;
+  box-shadow: 0px 8px 12px #1f5ca333;
+  height: 705px;
+  left: 60%;
+  position: absolute;
+  top: 100px;
+  width: 424px;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.div-postform .div-postproperty-6 {
+  width: 100%;
+  padding: 6%;
+}
+
+.div-postform .text-wrapper-9 {
+  color: #091e42;
+  font-family: "Open Sans", Helvetica;
+  font-size: 20px;
+  font-weight: 600;
+  height: 18px;
+  letter-spacing: 0;
+  line-height:18px;
+  white-space: nowrap;
+}
+
+.div-postform .text-wrapper-10 {
+  color: #091e42;
+  font-family: "Open Sans", Helvetica;
+  font-size: 12px;
+  font-weight: 600;
+  height: 14px;
+  letter-spacing: 0;
+  line-height: 16px;
+  white-space: nowrap;
+  margin-top: -6px;
+}
+
+.div-postform .text-wrapper-11 {
+  color: #091e42;
+  font-family: "Open Sans", Helvetica;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 20px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.div-postform .div-page-ppf {
+  margin-top: 5px;
+  position: relative;
+  width: 374px;
+}
+
+.div-postform .div-hd-d {
+  display: flex;
+  flex-direction: column;
+}
+
+.radiobutton-postform label {
+  display: inline-block;
+  width: fit-content;
+  padding: 7px;
+  border: 1px solid #bdbec3;
+  background-color: white;
+  border-radius: 20px;
+  margin-right: 12px;
+  margin-top: 5px;
+  font-size: 15px;
+  color: #091e42a2;
+  font-weight: 550;
+}
+
+.radiobutton-postform input[type="radio"] {
+  display: none;
+}
+
+.radiobutton-postform input[type="radio"]:checked + label {
+  background-color: #d7ecfb;
+  border: 1px solid #a3daff;
+  font-weight: 600;
+}
+
+.div-postform .div-hd-a {
+  position: relative;
+  margin-top: 5px;
+}
+
+.div-postform .div-uploadimage {
+  margin-top: 5px;
+  margin-left: 25px;
+}
+
+.div-postform .div-inpfields {
+  display: flex;
+  position: relative;
+  margin-top: 9px;
+}
+
+.div-postform .area-inp {
+  width: 250px;
+  max-height: 40px;
+  position: relative;
+}
+
+.div-postform .area-unit {
+  color: #091e42;
+  font-family: "Open Sans", Helvetica;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 20px;
+  margin-top: 20px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+  margin-left: 10px;
+}
+
+.div-postform .address-inp {
+  width: 340px;
+}
+
+.div-postform .city-inp {
+  width: 160px;
+  position: relative;
+}
+.div-postform .state-inp {
+  width: 160px;
+  position: relative;
+  left: 20px;
+}
+
+.div-postform .price-inp {
+  width: 250px;
+  max-height: 40px;
+  position: relative;
+}
+
+.div-postform .price-unit {
+  color: #091e42;
+  font-family: "Open Sans", Helvetica;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 20px;
+  margin-top: 25px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+  margin-left: 10px;
+}
+
+.div-postform .div-widgetbox-white {
+  background-color: #ffffff;
+  border-radius: 4px;
+  position: relative;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.div-postform .text-wrapper-17 {
+  color: #091e42;
+  font-family: "Open Sans", Helvetica;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+  white-space: nowrap;
+}
+
+.div-postform .phone-inp {
+  position: relative;
+  width: 375px;
+}
+.div-postform .email-inp {
+  position: relative;
+  top: 10px;
+  width: 375px;
+  height: 50px;
+}
+
+.div-postform .submit-btn {
+  width: 375px;
+  position: relative;
+  top: 27px;
+}
+
+.div-postform .contact-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
