@@ -8,32 +8,23 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { useForm } from "react-hook-form";
 import Footer from "../components/ListingPage/Footer";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { Alert, Snackbar } from "@mui/material";
 import { LoadingButton } from "@mui/lab";
 import { useNavigate } from "react-router-dom";
-// import { addUser } from "../Redux/Actions/user";
 import { useDispatch } from "react-redux";
 import { useSnackbar } from "notistack";
 import "./CSS/ForgetPassword.css";
 import { Header } from "../components/PlanPage/Header";
-import { useParams, useLocation } from "react-router-dom";
 
 export default function SignIn() {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const [severity, setSeverity] = useState("success");
   const { enqueueSnackbar } = useSnackbar();
-
-  // const location = useLocation();
-  // const queryParams = new URLSearchParams(location.search);
-  // const token = queryParams.get("token");
-  
-  // const { token } = useParams();
 
   const url = window.location.href;
   const tokenMatch = url.match(/token=([^&]*)/);
