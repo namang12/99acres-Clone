@@ -20,6 +20,7 @@ const PropertiesListCard = ({ property }) => {
     contactNo,
     email,
     propertyOptions,
+    propertyType,
   } = property;
   const navigate = useNavigate();
   const { user } = useSelector((store) => store.user);
@@ -130,7 +131,7 @@ const PropertiesListCard = ({ property }) => {
                 cursor: "pointer",
               }}
             >
-              {bhk} BHK Serviced Apartment for {propertyOptions} in {address},{" "}
+              {bhk} BHK Serviced {propertyType} for {propertyOptions} in {address},{" "}
               {city}
             </Typography>
             <Typography
@@ -272,7 +273,7 @@ const PropertiesListCard = ({ property }) => {
                 mr: 4,
               }}
             >
-              Amazing {bhk} bedroom {bhk > 3 ? (bhk > 5 ? bhk - 2 : bhk - 1) : bhk} bathroom in {propertyName} located in {address}, {city}, {state}.
+              Amazing {bhk} bedroom {bhk > 3 ? (bhk > 5 ? bhk - 2 : bhk - 1) : bhk} bathroom {propertyType} in {propertyName} located in {address}, {city}, {state}.
               Utilities include Cable, High Speed Fiber Internet, Electricity, Water Tank and Complete Power Backup and Gas also have {bhk > 3 ? (bhk > 5 ? bhk - 2 : bhk - 1) : bhk}{" "}Balcony, {bhk} Wardrobe, {bhk + 1} Fan, in a pet-friendly society.
               All Rooms are spacious and properly ventilated. Construction Quality is also High End with High Quality Fittings.
             </Typography>
