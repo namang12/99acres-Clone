@@ -40,7 +40,7 @@ function App() {
         />
         <Route path="/subscription" element={<Planpage />} />
         <Route path="/forgotpassword" element={<ForgotPassword />} />
-        <Route path="/changepassword" element={<ChangePassword />} />
+        <Route path="/changepassword/reset" element={<ChangePassword />} />
         <Route
           path="/polotno-editor"
           element={
