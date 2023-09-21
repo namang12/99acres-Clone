@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Box, Button, Divider, Paper, Typography } from "@mui/material";
 import ContactModal from "./ContactModal";
 import { useNavigate } from "react-router-dom";
@@ -7,9 +7,11 @@ import { useSnackbar } from "notistack";
 
 const PropertiesListCard = ({ property }) => {
   const [open, setOpen] = useState(false);
+  const [bhk, setbhk] = useState();
   const {
     address,
     city,
+    state,
     price,
     propertyArea,
     propertyName,
@@ -22,6 +24,24 @@ const PropertiesListCard = ({ property }) => {
   const navigate = useNavigate();
   const { user } = useSelector((store) => store.user);
   const { enqueueSnackbar } = useSnackbar();
+
+  useEffect(() => {
+    if (propertyArea < 750) {
+      setbhk(1);
+    } else if (propertyArea >= 750 && propertyArea < 1500) {
+      setbhk(2);
+    } else if (propertyArea >= 1500 && propertyArea < 2500) {
+      setbhk(3);
+    } else if (propertyArea >= 2500 && propertyArea < 4000) {
+      setbhk(4);
+    } else if (propertyArea >= 4000 && propertyArea < 5400) {
+      setbhk(5);
+    } else if (propertyArea >= 5400 && propertyArea < 7000) {
+      setbhk(6);
+    } else if (propertyArea >= 7000) {
+      setbhk(7);
+    }
+  }, []);
 
   const handleCardNavigate = () => {
     if (!user) {
@@ -110,7 +130,7 @@ const PropertiesListCard = ({ property }) => {
                 cursor: "pointer",
               }}
             >
-              3 BHK Serviced Apartment for {propertyOptions} in {address},{" "}
+              {bhk} BHK Serviced Apartment for {propertyOptions} in {address},{" "}
               {city}
             </Typography>
             <Typography
@@ -209,7 +229,7 @@ const PropertiesListCard = ({ property }) => {
                     color: "#8993a4",
                   }}
                 >
-                  (229 sq.m.) Super built-up Area
+                  ({(propertyArea * 0.092903).toFixed(1)} sq.m.) Super built-up Area
                 </Typography>
               </Box>
               <Box>
@@ -223,7 +243,7 @@ const PropertiesListCard = ({ property }) => {
                       color: "#091E42",
                     }}
                   >
-                    3 BHK
+                    {bhk} BHK
                   </Typography>
                 </Box>
 
@@ -236,7 +256,7 @@ const PropertiesListCard = ({ property }) => {
                     color: "#8993a4",
                   }}
                 >
-                  4 Baths
+                  {bhk > 3 ? (bhk > 5 ? bhk - 2 : bhk - 1) : bhk} Baths
                 </Typography>
               </Box>
             </Box>
@@ -252,12 +272,9 @@ const PropertiesListCard = ({ property }) => {
                 mr: 4,
               }}
             >
-              New unused floor on 502 sq yd plot in a premium gated community,
-              dlf phase 1, close to the market area with all amenities. Very
-              high end construction and finish quality, with top quality
-              equipment. Central airconditioning with mitsubishi acs. Separate
-              water tank and full power back up. All rooms are very spacious.
-              Buil...
+              Amazing {bhk} bedroom {bhk > 3 ? (bhk > 5 ? bhk - 2 : bhk - 1) : bhk} bathroom in {propertyName} located in {address}, {city}, {state}.
+              Utilities include Cable, High Speed Fiber Internet, Electricity, Water Tank and Complete Power Backup and Gas also have {bhk > 3 ? (bhk > 5 ? bhk - 2 : bhk - 1) : bhk}{" "}Balcony, {bhk} Wardrobe, {bhk + 1} Fan, in a pet-friendly society.
+              All Rooms are spacious and properly ventilated. Construction Quality is also High End with High Quality Fittings.
             </Typography>
             <Divider sx={{ mt: 3, background: "rgba(0,0,0,0.15)" }} />
             <Box sx={{ mt: 2, display: "flex", justifyContent: "flex-end" }}>

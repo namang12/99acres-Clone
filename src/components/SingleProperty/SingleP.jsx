@@ -91,7 +91,9 @@ export const SingleP = () => {
     } else if (propertyArea >= 7000) {
       setbhk(7);
     }
-    setIsLoading(false);
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
   };
 
   return (
